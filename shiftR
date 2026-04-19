@@ -1,0 +1,134 @@
+#! /usr/bin/env bash
+exec /home/miguelangel-garcia/miniconda3/envs/digital/bin/vvp -f "$0" "$@" <<'# EOF'
+:ivl_version "13.0 (devel)" "(0_8-6859-gf50cc35d2-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/system.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/v2005_math.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/va_math.vpi";
+S_0xe45b870 .scope module, "shiftR_TB" "shiftR_TB" 2 4;
+ .timescale -9 -12;
+P_0xe422550 .param/real "DUTY_CYCLE" 0 2 14, Cr<m4000000000000000gfc1>; value=0.500000
+P_0xe422590 .param/l "OFFSET" 0 2 15, +C4<00000000000000000000000000000000>;
+P_0xe4225d0 .param/l "PERIOD" 0 2 13, +C4<00000000000000000000000000010100>;
+v0xe471e10_0 .var "clk", 0 0;
+v0xe471ed0_0 .var "i", 2 0;
+v0xe471f90_0 .net "n", 15 0, v0xe448c40_0;  1 drivers
+v0xe472060_0 .var "rst", 0 0;
+v0xe472130_0 .var "sh", 0 0;
+E_0xe45a430 .event posedge, v0xe448a80_0;
+S_0xe421140 .scope begin, "TEST_CASE" "TEST_CASE" 2 46, 2 46 0, S_0xe45b870;
+ .timescale -9 -12;
+S_0xe4212d0 .scope module, "uut" "shiftR" 2 11, 3 1 0, S_0xe45b870;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "sh";
+    .port_info 2 /INPUT 1 "rst";
+    .port_info 3 /OUTPUT 16 "n";
+v0xe448a80_0 .net "clk", 0 0, v0xe471e10_0;  1 drivers
+v0xe448c40_0 .var "n", 15 0;
+v0xe448f90_0 .net "rst", 0 0, v0xe472060_0;  1 drivers
+v0xe4491a0_0 .net "sh", 0 0, v0xe472130_0;  1 drivers
+E_0xe421cf0 .event negedge, v0xe448a80_0;
+    .scope S_0xe4212d0;
+T_0 ;
+    %wait E_0xe421cf0;
+    %load/vec4 v0xe448f90_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 32, 0, 16;
+    %assign/vec4 v0xe448c40_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0xe4491a0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0xe448c40_0;
+    %parti/s 15, 1, 2;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0xe448c40_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v0xe448c40_0;
+    %parti/s 15, 0, 2;
+    %concati/vec4 0, 0, 1;
+    %assign/vec4 v0xe448c40_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0xe45b870;
+T_1 ;
+    %delay 0, 0;
+T_1.0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xe471e10_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xe471e10_0, 0, 1;
+    %delay 10000, 0;
+    %jmp T_1.0;
+T_1.1 ;
+    %end;
+    .thread T_1;
+    .scope S_0xe45b870;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xe472060_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xe472130_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_0xe45b870;
+T_3 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xe472060_0, 0, 1;
+    %wait E_0xe45a430;
+    %wait E_0xe421cf0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xe472060_0, 0, 1;
+    %wait E_0xe45a430;
+    %wait E_0xe421cf0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xe472130_0, 0, 1;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0xe471ed0_0, 0, 3;
+T_3.0 ; Top of for-loop 
+    %load/vec4 v0xe471ed0_0;
+    %pad/u 32;
+    %cmpi/u 4, 0, 32;
+    %jmp/0xz T_3.1, 5;
+    %wait E_0xe45a430;
+T_3.2 ; for-loop step statement
+    %load/vec4 v0xe471ed0_0;
+    %addi 1, 0, 3;
+    %store/vec4 v0xe471ed0_0, 0, 3;
+    %jmp T_3.0;
+T_3.1 ; for-loop exit label
+    %end;
+    .thread T_3;
+    .scope S_0xe45b870;
+T_4 ;
+    %fork t_1, S_0xe421140;
+    %jmp t_0;
+    .scope S_0xe421140;
+t_1 ;
+    %vpi_call 2 47 "$dumpfile", "shiftR_TB.vcd" {0 0 0};
+    %vpi_call 2 48 "$dumpvars", 32'sb11111111111111111111111111111111, S_0xe4212d0 {0 0 0};
+    %delay 1000000, 0;
+    %vpi_call 2 49 "$finish" {0 0 0};
+    %end;
+    .scope S_0xe45b870;
+t_0 %join;
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "shiftR_TB.v";
+    "shiftR.v";
+# EOF

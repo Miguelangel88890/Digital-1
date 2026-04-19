@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+exec /home/miguelangel-garcia/miniconda3/envs/digital/bin/vvp -f "$0" "$@" <<'# EOF'
+:ivl_version "13.0 (devel)" "(0_8-6859-gf50cc35d2-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/system.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/v2005_math.vpi";
+:vpi_module "/home/miguelangel-garcia/miniconda3/envs/digital/lib/ivl/va_math.vpi";
+S_0x22f21e0 .scope module, "hello" "hello" 2 1;
+ .timescale 0 0;
+    .scope S_0x22f21e0;
+T_0 ;
+    %vpi_call 2 3 "$display", "Salve a tutti" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "hello.v";
+# EOF
