@@ -1,6 +1,6 @@
-TARGET = multiplicador_32
-##OBJS   = ${TARGET}.v
-OBJS = shiftR_16.v shiftL_32.v comp.v acc.v control_mult.v multiplicador_32.v
+TARGET = contador
+OBJS   = ${TARGET}.v
+##OBJS = shiftR_16.v shiftL_32.v comp.v acc.v control_mult.v multiplicador_32.v
 ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 
 sim:
