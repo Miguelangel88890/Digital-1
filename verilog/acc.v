@@ -1,6 +1,6 @@
 module acc (clk , A, add, rst, pp);
   input clk;
-  input [31:0] A;
+  input [31:0]A;
   input add;
   input rst;
   output reg [31:0] pp;

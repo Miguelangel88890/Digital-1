@@ -1,14 +1,18 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module shiftR_32_TB;
+module multiplicador_32_TB;
 
-   reg clk;
-   reg sh;
-   reg rst;
-   wire [31:0] n;
+ reg clk;
+ reg rst;
+ reg init;
+ reg [31:0]A;
+ reg [15:0]B;
 
-   shiftR_32 uut( .clk(clk) , .sh(sh) , .rst(rst) , .n(n) );
+ wire done;
+ wire [31:0]result;
+
+ multiplicador_32 uut( .clk(clk), .rst(rst), .init(init), .done(done) , .A(A) , .B(B) , .pp(result) );
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -25,26 +29,28 @@ module shiftR_32_TB;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0; sh = 0;
+      rst = 1;init = 0; B = 16'b0000000000010111; A = 32'b00000000000000000000000000101100; ;
    end
+
 
    reg [2:0] i;
    initial begin // Reset the system, Start the image capture process
+        @ (posedge clk);
+        @ (negedge clk);
+        init = 1;
         rst = 1;
         @ (posedge clk);
         @ (negedge clk);
         rst = 0;
+        @(posedge clk);
         @ (posedge clk);
         @ (negedge clk);
-        sh = 1;
-       for(i=0; i<4; i=i+1) begin
-         @ (posedge clk);
-       end
-   end
+        
 
+       end
 
    initial begin: TEST_CASE
-     $dumpfile("shiftR_32_TB.vcd");
+     $dumpfile("multiplicador_32_TB.vcd");
      $dumpvars(-1, uut);
      #(1000) $finish;
    end

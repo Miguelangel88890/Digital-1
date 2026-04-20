@@ -1,17 +1,18 @@
-module shiftR_16 (clk , sh, rst, n);
+module shiftR_16 (clk , sh, rst, in_B, s_B);
   input clk;
   input sh;
   input rst;
-  output reg [15:0] n;
+  input [15:0]in_B;
+  output reg [15:0] s_B;
 
 always @(negedge clk)
   if (rst)
-   n <= 16'b1 << 5; 
+    s_B <= in_B;
   else
      begin
       if (sh)
-        n <= {1'b0,n[15:1]};
+        s_B <= {1'b0,s_B[15:1]};
       else
-        n <= {n[14:0],1'b0};
+        s_B <= s_B;
      end
 endmodule

@@ -2,8 +2,9 @@ module control_mult( clk , rst , lsb_B , init , z , done , sh , reset , add );
 
  input clk;
  input rst;
- input lsb_B;
  input init;
+
+ input lsb_B;
  input z;
 
  output reg done;
@@ -52,9 +53,9 @@ always @(posedge clk) begin
       reset <= 0;
       add   <= 0;
       if(z)
-        state = CHECK_LSB;
-      else
         state = FINISH;
+      else
+        state = CHECK_LSB;
       end
 
      CHECK_LSB: begin

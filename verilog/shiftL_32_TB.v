@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module shiftR_16_TB;
+module shiftL_32_TB;
 
    reg clk;
    reg sh;
    reg rst;
-   reg [15:0]B;
-   wire [15:0] out_B;
+   reg [15:0]A;
+   wire [31:0] out_A;
 
-   shiftR_16 uut( .clk(clk) , .sh(sh) , .rst(rst) , .in_B(B), .s_B(out_B) );
+   shiftL_32 uut( .clk(clk) , .sh(~sh) , .rst(rst) , .in_A(A) , .s_A(out_A) );
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -26,7 +26,7 @@ module shiftR_16_TB;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0; sh = 0; B = 16'b1 << 5;
+      rst = 0; sh = 0; A = 32'b1 << 5;
    end
 
    reg [2:0] i;
@@ -45,7 +45,7 @@ module shiftR_16_TB;
 
 
    initial begin: TEST_CASE
-     $dumpfile("shiftR_16_TB.vcd");
+     $dumpfile("shiftL_32_TB.vcd");
      $dumpvars(-1, uut);
      #(1000) $finish;
    end
