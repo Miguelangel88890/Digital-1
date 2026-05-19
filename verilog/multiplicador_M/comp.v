@@ -1,4 +1,5 @@
-module comp(B, z);
+module comp(clk, B, z);
+  input clk;
   input [15:0]B;
   output reg z;
 
