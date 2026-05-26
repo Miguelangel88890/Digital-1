@@ -1,36 +1,46 @@
-module control_divisor_M( clk , rst , lsb_A , init , z , done , sh , reset , add );
+
+//26/05/26 9:00 AM Me faltaria poner diagrama de estados completos, quede en CHECK_MSB
+module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done , msb , reset );
 
  input clk;
  input rst;
  input init;
 
- input lsb_B;
- input z;
+// Estos son las señales entrada del Bloque de control:
+ input c;
+ input msb;
 
- output reg done;
- output reg sh;
+//Estos son las señales de salida del bloque de control:
  output reg reset;
- output reg add;
+ output reg sh;
+ output reg lsb_A;
+ output reg addi;
+ output reg ld_temp;
+ output reg done;
 
 
  parameter START  = 3'b000;
- parameter CHECK_B  = 3'b001;
- parameter CHECK_LSB  = 3'b010;
- parameter SHIFT  = 3'b011;
- parameter ADD    = 3'b100;
+ parameter RCI = 3'b001;
+ parameter CHECK_MSB  = 3'b010;
+ parameter CHANGE_A_TEMP  = 3'b011;
+ parameter CHECK_I   = 3'b100;
  parameter FINISH    = 3'b101;
 
  reg [2:0] state;
 
+
  initial begin
+  sh = 0;
+  ld_temp = 0;
+  lsb_A = 0;
+  addi   = 0; 
   done  = 0;
-  sh    = 0;
   reset = 0;
-  add   = 0; 
   state = 0;
  end
 
- reg [4:0] count;
+ // Este seria el i en el diagrama.
+ reg [4:0] count; /////////////////////////
 
 always @(posedge clk) begin
     if (rst) begin
@@ -39,37 +49,39 @@ always @(posedge clk) begin
     case(state)
 
       START:begin
-        done  <= 0;
-        sh    <= 0;
-        reset <= 1;
-        add   <= 0;
-        count <= 0;
+        sh      <= 0;
+        ld_temp <= 0;
+        lsb_A   <= 0;
+        addi    <= 0; 
+        done    <= 0;
+        reset   <= 1;
         if(init)
-          state = CHECK_B;
+          state <= RCI;
         else
-          state = START;
+          state <= START;
       end
 
-     CHECK_B: begin
-      done  <= 0;
-      sh    <= 0;
-      reset <= 0;
-      add   <= 0;
-      if(z)
-        state = FINISH;
-      else
-        state = CHECK_LSB;
+     RCI: begin
+      sh      <= 1;
+      ld_temp <= 0;
+      lsb_A   <= 0;
+      addi    <= 1; 
+      done    <= 0;
+      reset   <= 0;
+      state = CHECK_MSB;
       end
 
-     CHECK_LSB: begin
-      done  <= 0;
-      sh    <= 0;
-      reset <= 0;
-      add   <= 0;
-      if(lsb_B)
-        state = ADD;
+     CHECK_MSB: begin
+      sh      <= 0;
+      ld_temp <= 0;
+      lsb_A   <= 0;
+      addi    <= 0; 
+      done    <= 0;
+      reset   <= 0;
+      if(msb)
+        state <= ADD;
       else
-        state = SHIFT;
+        state <= SHIFT;
      end
 
      SHIFT: begin

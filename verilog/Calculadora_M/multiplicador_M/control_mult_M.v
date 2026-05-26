@@ -42,9 +42,9 @@ always @(posedge clk) begin
         reset <= 1;
         add   <= 0;
         if(init)
-          state = CHECK_B;
+          state <= CHECK_B;
         else
-          state = START;
+          state <= START;
       end
 
      CHECK_B: begin
@@ -53,9 +53,9 @@ always @(posedge clk) begin
       reset <= 0;
       add   <= 0;
       if(z)
-        state = FINISH;
+        state <= FINISH;
       else
-        state = CHECK_LSB;
+        state <= CHECK_LSB;
       end
 
      CHECK_LSB: begin
@@ -88,10 +88,10 @@ always @(posedge clk) begin
         sh    <= 0;
         reset <= 0;
         add   <= 0;
-        state = START;
+        state <= START;
      end
 
-     default: state = START;
+     default: state <= START;
    endcase
   end
 end
