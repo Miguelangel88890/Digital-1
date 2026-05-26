@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue May 19 12:52:55 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/multiplicador_M/multiplicador_32_TB_M.vcd"
+[dumpfile_mtime] "Tue May 19 12:50:21 2026"
+[dumpfile_size] 6974
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/multiplicador_M/multiplicador_32_M.gtkw"
+[timestart] 0
+[size] 1854 1011
+[pos] -1 -1
+*-17.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] multiplicador_32_TB_M.
+[treeopen] multiplicador_32_TB_M.uut.
+[sst_width] 216
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 295
+@28
+multiplicador_32_TB_M.uut.clk
+multiplicador_32_TB_M.uut.w_A[31:0]
+multiplicador_32_TB_M.uut.w_B[15:0]
+@29
+multiplicador_32_TB_M.uut.done
+@28
+multiplicador_32_TB_M.uut.w_z
+multiplicador_32_TB_M.uut.w_sh
+multiplicador_32_TB_M.uut.w_reset
+multiplicador_32_TB_M.uut.w_acc
+@24
+multiplicador_32_TB_M.uut.pp[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

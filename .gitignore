@@ -1,0 +1,22 @@
+# Simulaciones Verilog
+*.vcd
+*.svc
+*.fst
+
+# Archivos compilados
+*.out
+*.bin
+*.o
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/
+
+# Linux temporales
+*~
