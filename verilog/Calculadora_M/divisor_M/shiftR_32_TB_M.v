@@ -1,14 +1,15 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module acc_TB_M;
+module shiftR_32_TB_M;
 
    reg clk;
-   reg add;
+   reg sh;
    reg rst;
-   reg [3:0]A;
+   reg [31:0]B;
+   wire [31:0] out_B;
 
-   acc_M uut( .clk(clk) , .A(A) , .add(add) , .rst(rst)  );
+   shiftR_32_M uut( .clk(clk) , .sh(sh) , .rst(rst) , .in_B(B), .s_B(out_B) );
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -25,27 +26,26 @@ module acc_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0; add = 0; A = 5'h00;
+      rst = 0; sh = 0; B = 32'b1 << 5;
    end
 
    reg [2:0] i;
    initial begin // Reset the system, Start the image capture process
-        #20 rst = 1;
-        A = 1;
+        rst = 1;
         @ (posedge clk);
         @ (negedge clk);
         rst = 0;
         @ (posedge clk);
         @ (negedge clk);
-        add = 1;
-       for(i=0; i<10; i=i+1) begin
+        sh = 1;
+       for(i=0; i<4; i=i+1) begin
          @ (posedge clk);
        end
    end
 
 
    initial begin: TEST_CASE
-     $dumpfile("acc_TB_M.vcd");
+     $dumpfile("shiftR_32_TB_M.vcd");
      $dumpvars(-1, uut);
      #(1000) $finish;
    end

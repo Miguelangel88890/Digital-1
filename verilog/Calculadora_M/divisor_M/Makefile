@@ -1,6 +1,6 @@
-TARGET = shiftL_32
+TARGET = acc
 ##OBJS   = ${TARGET}.v
-OBJS = shiftL_32_M.v 
+OBJS = acc_M.v
 ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 
 sim:
