@@ -1,6 +1,6 @@
-TARGET = acc
+TARGET = load_temp
 ##OBJS   = ${TARGET}.v
-OBJS = acc_M.v
+OBJS = load_temp_M.v
 ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 
 sim:

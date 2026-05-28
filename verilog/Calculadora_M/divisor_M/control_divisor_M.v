@@ -1,5 +1,5 @@
 
-//26/05/26 9:00 AM Me faltaria poner diagrama de estados completos, quede en CHECK_MSB
+//28/05/26 Parece que ya esta
 module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done , msb , reset );
 
  input clk;
@@ -39,7 +39,7 @@ module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done ,
   state = 0;
  end
 
- // Este seria el i en el diagrama.
+ // Este es el que hace esperar en finish para que en el programa alcance a leer el DONE.
  reg [4:0] count; /////////////////////////
 
 always @(posedge clk) begin
@@ -79,25 +79,33 @@ always @(posedge clk) begin
       done    <= 0;
       reset   <= 0;
       if(msb)
-        state <= ADD;
+        state <= CHECK_I;
       else
-        state <= SHIFT;
+        state <= CHANGE_A_TEMP;
      end
 
-     SHIFT: begin
-      done  <= 0;
-      sh    <= 1;
-      reset <= 0;
-      add   <= 0;
-      state = CHECK_B;
+     CHANGE_A_TEMP: begin
+      sh      <= 0;
+      ld_temp <= 1;
+      lsb_A   <= 1;
+      addi    <= 0; 
+      done    <= 0;
+      reset   <= 0;
+      state = CHECK_I;
      end
-     ADD: begin
-        done  <= 0;
-        sh    <= 0;
-        reset <= 0;
-        add   <= 1;
-        state = SHIFT;
+     CHECK_I: begin
+      sh      <= 0;
+      ld_temp <= 0;
+      lsb_A   <= 0;
+      addi    <= 0; 
+      done    <= 0;
+      reset   <= 0;
+      if(c)
+        state <= FINISH;
+      else
+        state <= RCI;
      end
+    
      FINISH:begin
         done  <= 1;
         count = count + 1;

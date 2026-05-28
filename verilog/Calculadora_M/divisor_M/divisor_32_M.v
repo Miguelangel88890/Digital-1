@@ -2,14 +2,13 @@ module divisor_32_M(clk, rst, init, done, A, B, pp);
     input rst;
     input clk;
     input init;
-    input [15:0]A;
+    input [31:0]A;
     input [15:0]B;
     output [31:0]pp;
     output done;
 
     //Aqui depronto falta el A_LSB, que deberia hacer el bit menos significativo de A igual a 1
     wire w_sh;
-    wire w_ld_rt;
     wire w_ld_temp;
     wire w_reset;
     wire w_addi;
@@ -19,10 +18,14 @@ module divisor_32_M(clk, rst, init, done, A, B, pp);
 
     wire [15:0]w_A;
     wire [15:0]w_B;
-    shiftR_32_M shR_M0  (.clk(clk) , .sh(w_sh) , .rst(w_reset) , .in_B(B) , .s_B(w_B));
+    wire [15:0]w_temp;
+
+
     shiftL_32_M shL_M1  (.clk(clk) , .sh(w_sh) , .rst(w_reset) , .in_A(A) , .s_A(w_A));
 
-    comp_M comp_M0 (.B(w_B) , .z(w_z));
+    load_temp__M load_temp_M0 (.ld_temp(w_ld_temp) , .A(w_A) , .temp(w_temp) );
+
+    resta_M resta_M0 (.temp(temp) , .B(B));
 
     acc_M acc_M0 (.clk(clk), .A(w_A) , .add(w_acc) , .rst(w_reset) , .pp(pp));
 
