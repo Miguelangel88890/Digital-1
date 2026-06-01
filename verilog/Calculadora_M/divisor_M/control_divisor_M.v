@@ -1,6 +1,6 @@
 
 //28/05/26 Parece que ya esta
-module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done , msb , reset );
+module control_divisor_M( clk , rst , init , ld_temp_lsbA ,  addi , c , done , msb , reset );
 
  input clk;
  input rst;
@@ -13,9 +13,8 @@ module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done ,
 //Estos son las señales de salida del bloque de control:
  output reg reset;
  output reg sh;
- output reg lsb_A;
  output reg addi;
- output reg ld_temp;
+ output reg ld_temp_lsbA;
  output reg done;
 
 
@@ -31,7 +30,7 @@ module control_divisor_M( clk , rst , init , ld_temp , lsb_A , addi , c , done ,
 
  initial begin
   sh = 0;
-  ld_temp = 0;
+  ld_temp_lsbA = 0;
   lsb_A = 0;
   addi   = 0; 
   done  = 0;
@@ -50,7 +49,7 @@ always @(posedge clk) begin
 
       START:begin
         sh      <= 0;
-        ld_temp <= 0;
+        ld_temp_lsbA <= 0;
         lsb_A   <= 0;
         addi    <= 0; 
         done    <= 0;
@@ -63,7 +62,7 @@ always @(posedge clk) begin
 
      RCI: begin
       sh      <= 1;
-      ld_temp <= 0;
+      ld_temp_lsbA <= 0;
       lsb_A   <= 0;
       addi    <= 1; 
       done    <= 0;
@@ -73,7 +72,7 @@ always @(posedge clk) begin
 
      CHECK_MSB: begin
       sh      <= 0;
-      ld_temp <= 0;
+      ld_temp_lsbA <= 0;
       lsb_A   <= 0;
       addi    <= 0; 
       done    <= 0;
@@ -86,8 +85,7 @@ always @(posedge clk) begin
 
      CHANGE_A_TEMP: begin
       sh      <= 0;
-      ld_temp <= 1;
-      lsb_A   <= 1;
+      ld_temp_lsbA <= 1;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
@@ -95,12 +93,11 @@ always @(posedge clk) begin
      end
      CHECK_I: begin
       sh      <= 0;
-      ld_temp <= 0;
-      lsb_A   <= 0;
+      ld_temp_lsbA <= 0;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
-      if(c)
+      if (c == 16)
         state <= FINISH;
       else
         state <= RCI;
@@ -108,11 +105,14 @@ always @(posedge clk) begin
     
      FINISH:begin
         done  <= 1;
+        sh      <= 0;
+        ld_temp_lsbA <= 0;
+        lsb_A   <= 0;
+        addi    <= 0; 
+        done    <= 0;
+        reset   <= 0;
         count = count + 1;
 				state = (count>29) ? START : FINISH ;  // hace falta de 10 ciclos de reloj, para que lea el done y luego cargue el resultado
-        sh    <= 0;
-        reset <= 0;
-        add   <= 0;
      end
 
      default: state = START;

@@ -1,20 +1,17 @@
-module acc_M (clk , A, add, rst, pp);
+module acc_M (clk , i, addi, rst);
   input clk;
-  input [31:0]A;
-  input add;
+  input addi;
   input rst;
-  output reg [31:0] pp;
-
-initial pp = 0;
+  output reg [5:0] i;
 
 always @(negedge clk)
   if (rst)
-   pp <= 32'h00000000;
+   i <= 0;
   else
      begin
-      if (add)
-        pp <= pp + A;
+      if (addi)
+        i <= i + 1;
       else
-        pp <= pp;
+        i <= i;
      end
 endmodule

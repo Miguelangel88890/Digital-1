@@ -4,11 +4,11 @@
 module acc_TB_M;
 
    reg clk;
-   reg add;
+   reg addi;
    reg rst;
-   reg [3:0]A;
+   wire [5:0]i;
 
-   acc_M uut( .clk(clk) , .A(A) , .add(add) , .rst(rst)  );
+   acc_M uut( .clk(clk) , .i(i) , .addi(addi) , .rst(rst)  );
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -25,20 +25,19 @@ module acc_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0; add = 0; A = 5'h00;
+      rst = 0; addi = 0; 
    end
 
-   reg [2:0] i;
+   reg [3:0] k;
    initial begin // Reset the system, Start the image capture process
         #20 rst = 1;
-        A = 1;
         @ (posedge clk);
         @ (negedge clk);
         rst = 0;
         @ (posedge clk);
         @ (negedge clk);
-        add = 1;
-       for(i=0; i<10; i=i+1) begin
+        addi = 1;
+       for(k=0; k<10; k=k+1) begin
          @ (posedge clk);
        end
    end

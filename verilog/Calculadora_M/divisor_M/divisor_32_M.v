@@ -9,26 +9,29 @@ module divisor_32_M(clk, rst, init, done, A, B, pp);
 
     //Aqui depronto falta el A_LSB, que deberia hacer el bit menos significativo de A igual a 1
     wire w_sh;
-    wire w_ld_temp;
+    wire w_ld_temp_lsbA;
     wire w_reset;
     wire w_addi;
 
     wire w_MSB;
     wire w_C;
 
-    wire [15:0]w_A;
-    wire [15:0]w_B;
+    wire [31:0]w_A;
     wire [15:0]w_temp;
+
+    reg [5:0] i;
+    wire [15:0]resta_temp_B;
+    assign w_temp <= A{31:16};
+    assign resta_temp_B <= temp - (~B + 1);
+    
 
 
     shiftL_32_M shL_M1  (.clk(clk) , .sh(w_sh) , .rst(w_reset) , .in_A(A) , .s_A(w_A));
 
-    load_temp__M load_temp_M0 (.ld_temp(w_ld_temp) , .A(w_A) , .temp(w_temp) );
+    acc_M acc_M0 (.clk(clk), .i(i) , .addi(w_addi) , .rst(w_reset));
 
-    resta_M resta_M0 (.temp(temp) , .B(B));
-
-    acc_M acc_M0 (.clk(clk), .A(w_A) , .add(w_acc) , .rst(w_reset) , .pp(pp));
-
-    control_divisor_M estados_divisor_M0 (.clk(clk) , .rst(rst) , .lsb_B(w_B[0]) , .init(init) , .z(w_z) , .done(done) , .sh(w_sh) , .reset(w_reset) , .add(w_acc));
+    load_temp__M load_temp_M0 (.clk(clk) , .ld_temp_lsbA(w_ld_temp_lsbA) , .A(w_A) , .temp(w_temp) , .resta_temp(resta_temp_B));
+    
+    control_divisor_M estados_divisor_M0 (.clk(clk) , .rst(rst) , .init(init) .ld_temp_lsbA(w_ld_temp_lsbA) , .addi(w_addi) .c(i) , .done(done) , .msb(resta_temp_B[15]) , .reset(rst));
 
 endmodule
