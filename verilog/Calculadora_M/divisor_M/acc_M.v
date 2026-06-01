@@ -1,17 +1,19 @@
-module acc_M (clk , i, addi, rst);
+module acc_M (clk , i, addi, rst , c);
   input clk;
   input addi;
   input rst;
+  output reg c;
   output reg [5:0] i;
 
-always @(negedge clk)
-  if (rst)
+always @(negedge clk) begin
+  if (rst) begin
+   c <= 0;
    i <= 0;
-  else
-     begin
+  end else begin
       if (addi)
         i <= i + 1;
-      else
-        i <= i;
-     end
+      if (i == 16)
+          c <= 1;
+  end
+end
 endmodule

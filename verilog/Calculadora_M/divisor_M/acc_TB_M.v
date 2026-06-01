@@ -6,9 +6,10 @@ module acc_TB_M;
    reg clk;
    reg addi;
    reg rst;
+   wire w_C;
    wire [5:0]i;
 
-   acc_M uut( .clk(clk) , .i(i) , .addi(addi) , .rst(rst)  );
+   acc_M uut( .clk(clk) , .i(i) , .addi(addi) , .rst(rst)  , .c(w_C));
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;

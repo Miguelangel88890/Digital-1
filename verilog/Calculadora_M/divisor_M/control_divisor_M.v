@@ -97,7 +97,7 @@ always @(posedge clk) begin
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
-      if (c == 16)
+      if (c)
         state <= FINISH;
       else
         state <= RCI;
