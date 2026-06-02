@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module control_divisor_TB_M;
+module divisor_32_TB_M;
 
  reg clk;
  reg rst;
@@ -9,19 +9,11 @@ module control_divisor_TB_M;
  reg [31:0]A;
  reg [15:0]B;
 
- reg w_C;
- reg w_MSB;
-
-
- wire w_reset;
- wire w_sh;
- wire w_addi;
- wire w_ld_temp_lsbA;
  wire done;
  wire [31:0]result;
 
- control_divisor_M uut(.clk(clk) , .rst(rst) , .init(init) , .c(w_C) , .msb(w_MSB)  , .reset(w_reset) , .sh(w_sh) , .addi(w_addi) , .ld_temp_lsbA(w_ld_temp_lsbA)  , .done(done) );
-   
+ divisor_32_M uut( .clk(clk), .rst(rst), .init(init), .done(done) , .A(A) , .B(B) , .pp(result) );
+
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
    parameter OFFSET          = 0;
@@ -37,39 +29,31 @@ module control_divisor_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      w_C = 0; w_MSB = 0; rst = 1; init = 0; B = 16'b0000000000010111; A = 32'b00000000000000000000000000101100; ;
+      rst = 0;init = 0; B = 16'h0200; A = 32'h00000770;
    end
 
 
    reg [2:0] i;
    initial begin // Reset the system, Start the image capture process
         @ (posedge clk);
-        @ (negedge clk);
-        init = 1;
         rst = 1;
         @ (posedge clk);
-        @ (negedge clk);
         rst = 0;
+        @ (negedge clk);
+
+        init = 1;
+        @ (negedge clk);
+        init = 0;
+        @ (posedge clk);
         @(posedge clk);
         @ (posedge clk);
         @ (negedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        rst = 1;
         
 
        end
 
    initial begin: TEST_CASE
-     $dumpfile("control_divisor_TB_M.vcd");
+     $dumpfile("divisor_32_TB_M.vcd");
      $dumpvars(-1, uut);
      #(1000) $finish;
    end

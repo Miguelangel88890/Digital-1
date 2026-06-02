@@ -1,6 +1,6 @@
 
 //28/05/26 Parece que ya esta
-module control_divisor_M( clk , rst , init , ld_temp_lsbA ,  addi , c , done , msb , reset );
+module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_temp_lsbA  , done );
 
  input clk;
  input rst;
@@ -31,7 +31,6 @@ module control_divisor_M( clk , rst , init , ld_temp_lsbA ,  addi , c , done , m
  initial begin
   sh = 0;
   ld_temp_lsbA = 0;
-  lsb_A = 0;
   addi   = 0; 
   done  = 0;
   reset = 0;
@@ -50,7 +49,6 @@ always @(posedge clk) begin
       START:begin
         sh      <= 0;
         ld_temp_lsbA <= 0;
-        lsb_A   <= 0;
         addi    <= 0; 
         done    <= 0;
         reset   <= 1;
@@ -63,7 +61,6 @@ always @(posedge clk) begin
      RCI: begin
       sh      <= 1;
       ld_temp_lsbA <= 0;
-      lsb_A   <= 0;
       addi    <= 1; 
       done    <= 0;
       reset   <= 0;
@@ -73,7 +70,6 @@ always @(posedge clk) begin
      CHECK_MSB: begin
       sh      <= 0;
       ld_temp_lsbA <= 0;
-      lsb_A   <= 0;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
@@ -107,9 +103,7 @@ always @(posedge clk) begin
         done  <= 1;
         sh      <= 0;
         ld_temp_lsbA <= 0;
-        lsb_A   <= 0;
         addi    <= 0; 
-        done    <= 0;
         reset   <= 0;
         count = count + 1;
 				state = (count>29) ? START : FINISH ;  // hace falta de 10 ciclos de reloj, para que lea el done y luego cargue el resultado
@@ -125,10 +119,10 @@ reg [8*40:1] state_name;
 always @(*) begin
   case(state)
     START    : state_name = "START";
-    CHECK_B    : state_name = "CHECK_B";
-    CHECK_LSB    : state_name = "CHECK_LSB";
-    SHIFT    : state_name = "SHIFT";
-    ADD      : state_name = "ADD";
+    RCI    : state_name = "RCI";
+    CHECK_MSB    : state_name = "CHECK_MSB";
+    CHANGE_A_TEMP    : state_name = "CHANGE_A_TEMP";
+    CHECK_I      : state_name = "CHECK_I";
     FINISH      : state_name = "FINISH";
   endcase
 end

@@ -1,6 +1,6 @@
-TARGET = acc
+TARGET = divisor_32
 ##OBJS   = ${TARGET}.v
-OBJS = acc_M.v
+OBJS = shiftL_32_M.v acc_M.v load_temp_M.v control_divisor_M.v divisor_32_M.v
 ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 
 sim:
