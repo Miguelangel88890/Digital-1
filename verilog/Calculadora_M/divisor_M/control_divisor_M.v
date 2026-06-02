@@ -1,6 +1,6 @@
 
 //28/05/26 Parece que ya esta
-module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_temp_lsbA  , done );
+module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_temp  , done );
 
  input clk;
  input rst;
@@ -14,7 +14,7 @@ module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_t
  output reg reset;
  output reg sh;
  output reg addi;
- output reg ld_temp_lsbA;
+ output reg ld_temp;
  output reg done;
 
 
@@ -30,7 +30,7 @@ module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_t
 
  initial begin
   sh = 0;
-  ld_temp_lsbA = 0;
+  ld_temp = 0;
   addi   = 0; 
   done  = 0;
   reset = 0;
@@ -48,7 +48,7 @@ always @(posedge clk) begin
 
       START:begin
         sh      <= 0;
-        ld_temp_lsbA <= 0;
+        ld_temp <= 0;
         addi    <= 0; 
         done    <= 0;
         reset   <= 1;
@@ -60,7 +60,7 @@ always @(posedge clk) begin
 
      RCI: begin
       sh      <= 1;
-      ld_temp_lsbA <= 0;
+      ld_temp <= 0;
       addi    <= 1; 
       done    <= 0;
       reset   <= 0;
@@ -69,7 +69,7 @@ always @(posedge clk) begin
 
      CHECK_MSB: begin
       sh      <= 0;
-      ld_temp_lsbA <= 0;
+      ld_temp <= 0;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
@@ -81,7 +81,7 @@ always @(posedge clk) begin
 
      CHANGE_A_TEMP: begin
       sh      <= 0;
-      ld_temp_lsbA <= 1;
+      ld_temp <= 1;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
@@ -89,7 +89,7 @@ always @(posedge clk) begin
      end
      CHECK_I: begin
       sh      <= 0;
-      ld_temp_lsbA <= 0;
+      ld_temp <= 0;
       addi    <= 0; 
       done    <= 0;
       reset   <= 0;
@@ -102,7 +102,7 @@ always @(posedge clk) begin
      FINISH:begin
         done  <= 1;
         sh      <= 0;
-        ld_temp_lsbA <= 0;
+        ld_temp <= 0;
         addi    <= 0; 
         reset   <= 0;
         count = count + 1;

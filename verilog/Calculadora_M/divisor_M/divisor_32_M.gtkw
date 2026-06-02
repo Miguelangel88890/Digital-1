@@ -1,39 +1,36 @@
 [*]
 [*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
-[*] Tue Jun  2 13:15:16 2026
+[*] Tue Jun  2 20:00:35 2026
 [*]
 [dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/divisor_M/divisor_32_TB_M.vcd"
-[dumpfile_mtime] "Tue Jun  2 13:09:01 2026"
-[dumpfile_size] 7265
+[dumpfile_mtime] "Tue Jun  2 20:00:11 2026"
+[dumpfile_size] 18516
 [savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/divisor_M/divisor_32_M.gtkw"
 [timestart] 0
 [size] 1854 1011
-[pos] -51 -51
-*-16.000000 20000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-16.000000 44200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] divisor_32_TB_M.
 [treeopen] divisor_32_TB_M.uut.
 [sst_width] 216
 [signals_width] 174
 [sst_expanded] 1
 [sst_vpaned_height] 295
-@28
-divisor_32_TB_M.uut.shL_M1.s_A[31:0]
 @24
 divisor_32_TB_M.uut.acc_M0.i[5:0]
 @28
-divisor_32_TB_M.uut.pp[31:0]
-divisor_32_TB_M.uut.A[31:0]
 divisor_32_TB_M.uut.w_A[31:0]
 @22
-divisor_32_TB_M.uut.shL_M1.in_A[31:0]
-@28
-divisor_32_TB_M.uut.shL_M1.s_A[31:0]
-@23
 divisor_32_TB_M.uut.w_A[31:0]
+@24
+divisor_32_TB_M.uut.pp[15:0]
+@820
+divisor_32_TB_M.uut.estados_divisor_M0.state_name[320:1]
 @22
-divisor_32_TB_M.uut.resta_temp_B[15:0]
 divisor_32_TB_M.uut.i[5:0]
-@28
-divisor_32_TB_M.uut.W_C
+@24
+divisor_32_TB_M.uut.A[15:0]
+@25
+divisor_32_TB_M.uut.B[15:0]
 [pattern_trace] 1
 [pattern_trace] 0

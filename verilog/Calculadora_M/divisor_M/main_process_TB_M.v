@@ -1,16 +1,19 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module load_temp_M_TB;
+module main_process_M_TB;
 
-   reg clk;
-   reg rst;
-   wire [31:0]A;
-   wire [15:0]temp;
-   reg [15:0]resta_temp;
-   reg z;
+  reg clk;
+  reg rst;
 
-   load_temp_M uut(.clk(clk) , .ld_temp_lsbA(z) , .A(A) , .temp(temp) , .resta_temp(resta_temp) , .rst(rst));
+  reg [15:0] temp;
+  reg [15:0] in_A;
+  wire [31:0] s_A;
+  
+  reg sh;
+  reg ld_temp;
+
+   main_process_M uut(.clk(clk) , .rst(rst) , .temp(temp) , .in_A(in_A) , .s_A(s_A) , .sh(sh) , .ld_temp(ld_temp));
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -27,7 +30,7 @@ module load_temp_M_TB;
    end
 
    initial begin  // Initialize Inputs
-      resta_temp = 16'd15 ; z = 0; rst = 1;
+      temp = 16'd15; in_A = 16'd20; sh = 0; ld_temp = 0; rst = 1;
    end
 
    reg [2:0] i;
@@ -38,14 +41,15 @@ module load_temp_M_TB;
         rst = 0;
         @ (posedge clk);
         @ (negedge clk);
-        z = 1;
+        sh = 1;
+        ld_temp = 1;
        for(i=0; i<4; i=i+1) begin
          @ (posedge clk);
        end
    end
 
    initial begin: TEST_CASE
-     $dumpfile("load_temp_TB_M.vcd");
+     $dumpfile("main_process_TB_M.vcd");
      $dumpvars(-1, uut);
      #(120) $finish;
    end

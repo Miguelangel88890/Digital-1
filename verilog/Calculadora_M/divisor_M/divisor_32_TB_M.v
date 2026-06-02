@@ -29,7 +29,7 @@ module divisor_32_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0;init = 0; B = 16'h0200; A = 32'h00000770;
+      rst = 0;init = 0; B = 16'd2; A = 32'd10;
    end
 
 
@@ -55,6 +55,6 @@ module divisor_32_TB_M;
    initial begin: TEST_CASE
      $dumpfile("divisor_32_TB_M.vcd");
      $dumpvars(-1, uut);
-     #(1000) $finish;
+     #(10000) $finish;
    end
 endmodule
