@@ -68,6 +68,12 @@ COMM_OBJS+= cores/multiplicador_M/shiftR_16_M.v
 COMM_OBJS+= cores/multiplicador_M/shiftL_32_M.v
 COMM_OBJS+= cores/multiplicador_M/control_mult_M.v
 
+COMM_OBJS+= cores/divisor_M/perip_divisor_M.v
+COMM_OBJS+= cores/divisor_M/divisor_32_M.v
+COMM_OBJS+= cores/divisor_M/accDiv_M.v
+COMM_OBJS+= cores/divisor_M/main_process_M.v
+COMM_OBJS+= cores/divisor_M/control_divisor_M.v
+
 
 #-----------------------------------------------------
 

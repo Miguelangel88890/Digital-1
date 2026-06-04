@@ -99,7 +99,7 @@ module SOC (
 // --------Instanciacion del periferico a probar ----------------#
 // --------------------------------------------------------------#
 // --------------------------------------------------------------#
-   peripheral_mult_M mult1 (
+   peripheral_divisor_M div1 (
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),

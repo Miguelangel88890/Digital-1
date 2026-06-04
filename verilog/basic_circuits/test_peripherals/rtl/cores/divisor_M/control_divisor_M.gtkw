@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Jun  2 12:46:02 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/divisor_M/control_divisor_TB_M.vcd"
+[dumpfile_mtime] "Tue Jun  2 12:41:55 2026"
+[dumpfile_size] 5741
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/divisor_M/control_divisor_M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -56 7
+*-15.222280 451280 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] control_divisor_TB_M.
+[sst_width] 216
+[signals_width] 201
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+control_divisor_TB_M.uut.clk
+@820
+control_divisor_TB_M.uut.state_name[320:1]
+@28
+control_divisor_TB_M.uut.init
+control_divisor_TB_M.uut.msb
+control_divisor_TB_M.uut.c
+@29
+control_divisor_TB_M.uut.done
+[pattern_trace] 1
+[pattern_trace] 0
