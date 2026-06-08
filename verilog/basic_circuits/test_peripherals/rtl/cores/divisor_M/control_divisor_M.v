@@ -52,6 +52,7 @@ always @(posedge clk) begin
         addi    <= 0; 
         done    <= 0;
         reset   <= 1;
+        count   <= 0;
         if(init)
           state <= RCI;
         else
@@ -101,12 +102,12 @@ always @(posedge clk) begin
     
      FINISH:begin
         done  <= 1;
+        count = count + 1;
+				state = (count>29) ? START : FINISH ;  // hace falta de 10 ciclos de reloj, para que lea el done y luego cargue el resultado
         sh      <= 0;
         ld_temp <= 0;
         addi    <= 0; 
         reset   <= 0;
-        count = count + 1;
-				state = (count>29) ? START : FINISH ;  // hace falta de 10 ciclos de reloj, para que lea el done y luego cargue el resultado
      end
 
      default: state = START;
