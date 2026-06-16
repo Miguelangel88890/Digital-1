@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Jun 16 13:30:37 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/shiftL_32_raiz_TB_M.vcd"
+[dumpfile_mtime] "Tue Jun 16 13:30:11 2026"
+[dumpfile_size] 628
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/shiftL_32_raiz_M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 120 19
+*-15.163396 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] shiftL_32_raiz_TB_M.
+[sst_width] 216
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+shiftL_32_raiz_TB_M.uut.clk
+shiftL_32_raiz_TB_M.uut.rst
+shiftL_32_raiz_TB_M.uut.sh
+shiftL_32_raiz_TB_M.uut.ld
+@29
+shiftL_32_raiz_TB_M.uut.in_A[31:0]
+@28
+shiftL_32_raiz_TB_M.uut.in_RES[15:0]
+shiftL_32_raiz_TB_M.uut.s_A[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
