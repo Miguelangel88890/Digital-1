@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Sat Jul  4 00:04:33 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/control_raizCuadrada_TB_M.vcd"
+[dumpfile_mtime] "Sat Jul  4 00:02:45 2026"
+[dumpfile_size] 2599
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/control_raizCuadrada_M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-15.430768 22700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] control_raizCuadrada_TB_M.
+[sst_width] 216
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+control_raizCuadrada_TB_M.uut.clk
+control_raizCuadrada_TB_M.uut.c
+control_raizCuadrada_TB_M.uut.msb
+@820
+control_raizCuadrada_TB_M.uut.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,6 +1,6 @@
-TARGET = write_result_raiz
+TARGET = raizCuadrada_32
 ##OBJS   = ${TARGET}.v
-OBJS = shiftL_32_raiz_M.v  write_result_raiz_M.v
+OBJS = shiftL_32_raiz_M.v  write_result_raiz_M.v acc_raiz_M.v aux_M.v raizCuadrada_32_M.v control_raizCuadrada_M.v
 ##OBJS = main_process_M.v
 ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 
