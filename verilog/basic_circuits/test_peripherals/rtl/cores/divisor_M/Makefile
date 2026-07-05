@@ -1,24 +1,32 @@
-TARGET = divisor_32
-##OBJS   = ${TARGET}.v
+
+TARGET=divisor_32
+TOP=divisor_32
+
 OBJS = accDiv_M.v main_process_M.v control_divisor_M.v divisor_32_M.v
-##OBJS = main_process_M.v
-ICE40_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
+PER_OBJS = perip_divisor_M.v $(OBJS)
+
+BUILD_DIR = build
+
+all: sim
 
 sim:
 	rm -f a.out *.vcd
-	iverilog -g2012 -DBENCH $(TARGET)_TB_M.v $(OBJS)
+	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  $(TARGET)_TB_M.v $(OBJS)
 	vvp a.out
-	gtkwave $(TARGET)_TB_M.vcd $(TARGET)_M.gtkw
-sim_post_syn:
-	yosys -v3 -l synth.log -p 'synth_ecp5 -top $(TARGET)_M -json $(TARGET)_M.json; write_verilog -attr2comment $(TARGET)_synth.v' $(OBJS)
-	iverilog  $(TARGET)_TB_M.v $(TARGET)_synth.v $(ICE40_SIM_CELLS) 
+	gtkwave $(TARGET)_TB_M.vcd
+
+sim_per:
+	rm -f a.out *.vcd
+	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  perip_$(TARGET)_TB_M.v $(PER_OBJS)
 	vvp a.out
-	gtkwave $(TARGET)_TB_M.vcd $(TARGET)_M.gtkw
+	gtkwave perip_$(TARGET)_TB_M.vcd
+
+
 svg: $(OBJS)
-	rm -rf *svg *out *dot
-	yosys -p "prep -top ${TARGET}_M; memory_map; opt; opt_expr; techmap; abc -g AND,OR,XOR; write_json ${TARGET}_M.json" ${OBJS}
-	yosys -p "read_verilog ${TARGET}_M.v; proc; memory_map; opt; opt_expr; techmap; abc -g AND,OR,XOR; show -format dot -prefix ${TARGET}_M_out"
-	netlistsvg ${TARGET}_M.json -o ${TARGET}_M.svg
-	google-chrome ${TARGET}_M.svg
+	yosys -p "prep -top ${TARGET}_M; write_json ${TARGET}_M.json" ${OBJS}
+	netlistsvg ${TARGET}_M.json -o ${TARGET}_M.svg  #--skin default.svg
+	yosys -p "prep -top ${TARGET}_M -flatten; write_json ${TARGET}_M_flat.json" ${OBJS}
+	netlistsvg ${TARGET}_M_flat.json -o ${TARGET}_M_flat.svg  #--skin default.svg
+
 clean:
-	rm -rf *svg *out *dot a.out *.vcd *json *_synth.v *log
+	rm -rf *.out *.vcd *.svg *.json
