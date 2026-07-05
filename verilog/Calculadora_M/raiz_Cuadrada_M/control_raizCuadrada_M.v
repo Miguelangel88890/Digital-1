@@ -65,7 +65,7 @@ always @(posedge clk) begin
       set   = 0; 
       ld = 0;
       done  = 0;
-      state = SETEO;
+      state =  SETEO;
       end
 
      SETEO: begin

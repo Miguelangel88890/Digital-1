@@ -9,7 +9,7 @@ module raizCuadrada_32_TB_M;
  reg [31:0]A;
 
  wire done;
- wire [31:0]result;
+ wire [31:0]pp;
 
  raizCuadrada_32_M uut( .clk(clk), .rst(rst), .init(init), .done(done), .A(A), .pp(pp));
 
@@ -28,7 +28,7 @@ module raizCuadrada_32_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0;init = 0; A = 32'd16;
+      rst = 0;init = 0; A = 32'd1225 ;
    end
 
 

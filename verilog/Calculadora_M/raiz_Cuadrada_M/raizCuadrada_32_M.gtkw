@@ -1,21 +1,33 @@
 [*]
 [*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
-[*] Sat Jul  4 00:14:49 2026
+[*] Sun Jul  5 12:59:47 2026
 [*]
 [dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/raizCuadrada_32_TB_M.vcd"
-[dumpfile_mtime] "Sat Jul  4 00:14:12 2026"
-[dumpfile_size] 20023
+[dumpfile_mtime] "Sun Jul  5 12:58:01 2026"
+[dumpfile_size] 17523
 [savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/raiz_Cuadrada_M/raizCuadrada_32_M.gtkw"
-[timestart] 750000
-[size] 1000 600
+[timestart] 0
+[size] 1854 1011
 [pos] -1 -1
-*-18.579941 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-17.579941 580000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] raizCuadrada_32_TB_M.
+[treeopen] raizCuadrada_32_TB_M.uut.
 [sst_width] 216
-[signals_width] 94
+[signals_width] 166
 [sst_expanded] 1
-[sst_vpaned_height] 150
+[sst_vpaned_height] 295
+@28
+raizCuadrada_32_TB_M.uut.clk
+@820
+raizCuadrada_32_TB_M.uut.estados_M0.state_name[320:1]
 @25
 raizCuadrada_32_TB_M.uut.pp[31:0]
+@24
+raizCuadrada_32_TB_M.uut.i[5:0]
+@28
+raizCuadrada_32_TB_M.uut.w_done
+raizCuadrada_32_TB_M.uut.in_RES[15:0]
+raizCuadrada_32_TB_M.uut.w_A[31:0]
+raizCuadrada_32_TB_M.uut.aux[31:0]
 [pattern_trace] 1
 [pattern_trace] 0

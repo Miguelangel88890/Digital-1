@@ -29,7 +29,7 @@ module raizCuadrada_32_M(clk, rst, init, done, A, pp);
 
     write_result_raiz_M write_result_raiz_M0 (.clk(clk) , .sh(w_sh) , .ld(w_ld) , .rst(w_reset) , .result(pp));
 
-    aux_M aux_M0 (.clk(clk) , .sh(w_sh) , .rst(w_reset) , .in_rta(pp) , .s_aux(aux));
+    aux_M aux_M0 (.clk(clk) , .set(w_set) , .rst(w_reset) , .in_rta(pp) , .s_aux(aux));
 
     shiftL_32_raiz_M shiftL_32_raiz_M0 (.clk(clk) , .in_A(A) , .in_RES(in_RES) , .s_A(w_A) , .ld(w_ld) , .sh(w_sh) , .rst(w_reset));
 

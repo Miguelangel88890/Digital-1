@@ -12,7 +12,7 @@ always @(negedge clk) begin
   end else begin
       if (sh)
         i <= i + 1;
-      if (i == 16)
+      if (i == 8)
           c <= 1;
   end
 end

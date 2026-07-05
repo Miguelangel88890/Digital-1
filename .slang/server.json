@@ -1,0 +1,16 @@
+{
+  "flags": "-f verilog/basic_circuits/test_peripherals/rtl/cores/test/mult/mult_32.svf",
+  "index": [
+    {
+      "dirs": [
+        "verilog/basic_circuits/test_peripherals/rtl/cores/test/mult"
+      ],
+      "excludeDirs": [
+        "build",
+        "sim",
+        "node_modules"
+      ]
+    }
+  ],
+  "build": "verilog/basic_circuits/test_peripherals/rtl/cores/test/mult/mult_32.svf"
+}

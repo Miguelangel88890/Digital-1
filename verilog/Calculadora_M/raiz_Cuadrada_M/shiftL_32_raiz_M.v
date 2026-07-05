@@ -15,7 +15,7 @@ module shiftL_32_raiz_M(clk , in_A , in_RES , s_A , ld , sh , rst);
     end
     else begin
         if (sh) begin
-            s_A[31:0] <= {s_A[30:0],1'b0};
+            s_A[31:0] <= {s_A[29:0],2'b00};
         end
         else begin
             if (ld)
