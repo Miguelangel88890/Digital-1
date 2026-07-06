@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 `define SIMULATION
-module peripheral_div_32_TB_M;
+module peripheral_raizCuadrada_32_TB_M;
    reg clk;
    reg  reset;
    reg  start;
@@ -12,7 +12,7 @@ module peripheral_div_32_TB_M;
    reg wr;
    wire [31:0]d_out;
 
-	peripheral_divisor_M uut (
+	peripheral_raizCuadrada_M uut (
 		.clk(clk), 
 		.reset(reset), 
 		.d_in(d_in), 
@@ -78,7 +78,7 @@ module peripheral_div_32_TB_M;
 	 
 
    initial begin: TEST_CASE
-     $dumpfile("perip_divisor_32_TB_M.vcd");
+     $dumpfile("perip_raizCuadrada_32_TB_M.vcd");
      $dumpvars(-1, uut);
      #(PERIOD*100) $finish;
    end

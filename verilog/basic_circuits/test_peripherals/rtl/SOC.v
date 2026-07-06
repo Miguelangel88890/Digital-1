@@ -99,7 +99,7 @@ module SOC (
 // --------Instanciacion del periferico a probar ----------------#
 // --------------------------------------------------------------#
 // --------------------------------------------------------------#
-   peripheral_divisor_M div1 (
+   peripheral_raizCuadrada_M raiz1 (
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),

@@ -17,7 +17,7 @@ module raizCuadrada_32_M(clk, rst, init, done, A, pp);
 
     wire [31:0]w_A;
 
-    reg [5:0] i;
+    wire [5:0] i;
     wire [31:0] aux;
     wire [15:0] in_RES;
     assign in_RES = w_A[31:16] + (~((aux<<1) + 1) + 1);

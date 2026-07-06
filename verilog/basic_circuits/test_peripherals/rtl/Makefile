@@ -75,6 +75,15 @@ COMM_OBJS+= cores/divisor_M/main_process_M.v
 COMM_OBJS+= cores/divisor_M/control_divisor_M.v
 
 
+COMM_OBJS+= cores/raizCuadrada_M/perip_raizCuadrada_M.v
+COMM_OBJS+= cores/raizCuadrada_M/raizCuadrada_32_M.v
+COMM_OBJS+= cores/raizCuadrada_M/acc_raiz_M.v
+COMM_OBJS+= cores/raizCuadrada_M/aux_M.v
+COMM_OBJS+= cores/raizCuadrada_M/shiftL_32_raiz_M.v
+COMM_OBJS+= cores/raizCuadrada_M/write_result_raiz_M.v
+COMM_OBJS+= cores/raizCuadrada_M/control_raizCuadrada_M.v
+
+
 #-----------------------------------------------------
 
 COMM_OBJS+= cores/test/perip_test.v

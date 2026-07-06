@@ -1,4 +1,4 @@
-module peripheral_divisor_M(clk , reset , d_in , cs , addr , rd , wr, d_out );
+module peripheral_raizCuadrada_M(clk , reset , d_in , cs , addr , rd , wr, d_out );
   
   input clk;
   input reset;
@@ -11,10 +11,9 @@ module peripheral_divisor_M(clk , reset , d_in , cs , addr , rd , wr, d_out );
 
 //------------------------------------ regs and wires-------------------------------
 reg [4:0] s; 	//selector mux_4  and write registers
-reg [15:0] A;//---mult_32 input registers
-reg [15:0] B;
+reg [31:0] A;//---mult_32 input registers
 reg init;
-wire [15:0] result;	//mult_32 output Regs
+wire [31:0] result;	//mult_32 output Regs
 wire done;
 //------------------------------------ regs and wires-------------------------------
 always @(*) begin//------address_decoder------------------------------
@@ -40,13 +39,11 @@ always @(posedge clk) begin//-------------------- escritura de registros
   if(reset) begin
     init = 0;
     A    = 0;
-    B    = 0;
   end
   else begin
     if (cs && wr) begin
 		   A    = s[0] ? d_in    : A;	//Write Registers
-		   B    = s[1] ? d_in    : B;	//Write Registers
-		   init = s[2] ? d_in[0] : init;
+		   init = s[1] ? d_in[0] : init;
     end
   end
 
@@ -67,14 +64,13 @@ end//-----------------------------------------------mux_4
 
 
 
-divisor_32_M div1 ( 
+raizCuadrada_32_M raiz1 ( 
 	.rst(reset), 
 	.clk(clk), 
 	.init(init), 
 	.done(done),
 	.pp(result), 
-	.A(A), 
-	.B(B)
+	.A(A)
  );
 
 endmodule
