@@ -43,7 +43,7 @@ always @(posedge clk) begin//-------------------- escritura de registros
   else begin
     if (cs && wr) begin
 		   A    = s[0] ? d_in    : A;	//Write Registers
-		   init = s[1] ? d_in[0] : init;
+		   init = s[2] ? d_in[0] : init;
     end
   end
 
