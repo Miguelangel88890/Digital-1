@@ -44,6 +44,7 @@ module control_raizCuadrada_M( clk , rst , init , c , msb  , reset , sh , set , 
 always @(posedge clk) begin
     if (rst) begin
       state = START;
+      count = 0;
     end else begin
     case(state)
 

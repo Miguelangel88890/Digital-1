@@ -37,7 +37,7 @@ module control_divisor_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      w_C = 0; w_MSB = 0; rst = 1; init = 0; B = 16'b0000000000010111; A = 32'b00000000000000000000000000101100; ;
+      w_C = 0; w_MSB = 0; rst = 1; init = 0; B = 16'b0000000000010111; A = 32'b00000000000000000000000000101100; 
    end
 
 

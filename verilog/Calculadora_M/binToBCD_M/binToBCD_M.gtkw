@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Wed Jul  8 13:29:50 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/binToBCD_M/binToBCD_TB_M.vcd"
+[dumpfile_mtime] "Wed Jul  8 13:28:59 2026"
+[dumpfile_size] 17175
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/binToBCD_M/binToBCD_M.gtkw"
+[timestart] 358500
+[size] 1854 1011
+[pos] -1 -1
+*-15.579941 730000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] binToBCD_TB_M.
+[treeopen] binToBCD_TB_M.uut.
+[sst_width] 216
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 295
+@28
+binToBCD_TB_M.uut.clk
+binToBCD_TB_M.uut.init
+binToBCD_TB_M.uut.done
+binToBCD_TB_M.uut.A[7:0]
+binToBCD_TB_M.uut.pp[15:0]
+binToBCD_TB_M.uut.w_A[31:0]
+binToBCD_TB_M.uut.w_ld1
+binToBCD_TB_M.uut.w_ld2
+binToBCD_TB_M.uut.w_ld3
+binToBCD_TB_M.uut.temp_RES3[3:0]
+binToBCD_TB_M.uut.temp_RES1[3:0]
+@24
+binToBCD_TB_M.uut.i[5:0]
+@28
+binToBCD_TB_M.uut.temp_RES2[3:0]
+@820
+binToBCD_TB_M.uut.estados_binToBCD_M0.state_name[320:1]
+@29
+binToBCD_TB_M.uut.estados_binToBCD_M0.sh
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Wed Jul  8 11:22:19 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/binToBCD_M/acc_TB_M.vcd"
+[dumpfile_mtime] "Wed Jul  8 11:21:41 2026"
+[dumpfile_size] 1929
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/binToBCD_M/acc_M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -50 100
+*-17.222279 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] acc_TB_M.
+[sst_width] 216
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+acc_TB_M.uut.clk
+@25
+acc_TB_M.uut.i[5:0]
+@28
+acc_TB_M.uut.c
+[pattern_trace] 1
+[pattern_trace] 0

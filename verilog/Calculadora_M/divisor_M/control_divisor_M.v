@@ -43,6 +43,7 @@ module control_divisor_M( clk , rst , init , c , msb  , reset , sh , addi , ld_t
 always @(posedge clk) begin
     if (rst) begin
       state = START;
+      count = 0;
     end else begin
     case(state)
 

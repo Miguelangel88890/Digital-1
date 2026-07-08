@@ -54,11 +54,12 @@ always @(posedge clk) begin
             set   = 0; 
             ld = 0;
             done  = 0;
-        if(init)
+        if(init) begin
           state <= REG_CORR;
-        else
+        end else begin
           state <= START;
           count <= 0;
+        end
       end
 
      REG_CORR: begin

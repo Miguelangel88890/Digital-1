@@ -1,26 +1,26 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module control_divisor_TB_M;
+module control_binToBCD_TB_M;
 
  reg clk;
  reg rst;
  reg init;
- reg [31:0]A;
- reg [15:0]B;
 
  reg w_C;
- reg w_MSB;
+ reg w_msb1;
+ reg w_msb2;
+ reg w_msb3;
 
 
  wire w_reset;
  wire w_sh;
- wire w_addi;
- wire w_ld_temp_lsbA;
+ wire w_ld1;
+ wire w_ld2;
+ wire w_ld3;
  wire done;
- wire [31:0]result;
 
- control_divisor_M uut(.clk(clk) , .rst(rst) , .init(init) , .c(w_C) , .msb(w_MSB)  , .reset(w_reset) , .sh(w_sh) , .addi(w_addi) , .ld_temp_lsbA(w_ld_temp_lsbA)  , .done(done) );
+ control_binToBCD_M uut( .clk(clk) , .rst(rst) , .init(init) , .c(w_C) , .msb1(w_msb1) , .msb2(w_msb2) , .msb3(w_msb3) , .reset(w_reset) , .sh(w_sh) , .ld1(w_ld1) , .ld2(w_ld2) , .ld3(w_ld3)  , .done(done) );
    
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -37,7 +37,7 @@ module control_divisor_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      w_C = 0; w_MSB = 0; rst = 1; init = 0; B = 16'b0000000000010111; A = 32'b00000000000000000000000000101100; 
+      w_C = 0; w_msb1 = 0; w_msb2 = 0; w_msb3 = 0; rst = 1; init = 0;
    end
 
 
@@ -55,6 +55,7 @@ module control_divisor_TB_M;
         @ (negedge clk);
         @ (posedge clk);
         @ (negedge clk);
+        init = 0;
         @ (posedge clk);
         @ (negedge clk);
         @ (posedge clk);
@@ -63,13 +64,13 @@ module control_divisor_TB_M;
         @ (negedge clk);
         @ (posedge clk);
         @ (negedge clk);
-        rst = 1;
+        
         
 
        end
 
    initial begin: TEST_CASE
-     $dumpfile("control_divisor_TB_M.vcd");
+     $dumpfile("control_binToBCD_TB_M.vcd");
      $dumpvars(-1, uut);
      #(1000) $finish;
    end
