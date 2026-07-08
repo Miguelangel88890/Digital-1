@@ -28,9 +28,9 @@ module binToBCD_M(clk, rst, init, done, A, pp);
     assign temp_SUM2 = w_A[15:12] + 3;
     assign temp_SUM3 = w_A[19:16] + 3;
 
-    assign temp_RES1 = w_A[11:8] + (~4'b0100 + 1);
-    assign temp_RES2 = w_A[15:12] + (~4'b0100 + 1);
-    assign temp_RES3 = w_A[19:16] + (~4'b0100 + 1);
+    assign temp_RES1 = w_A[11:8] + (~4'b0101 + 1);
+    assign temp_RES2 = w_A[15:12] + (~4'b0101 + 1);
+    assign temp_RES3 = w_A[19:16] + (~4'b0101 + 1);
 
     assign pp = {4'b0 , w_A[19:16] , w_A[15:12] , w_A[11:8]};
     
