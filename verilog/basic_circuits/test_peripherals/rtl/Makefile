@@ -84,6 +84,19 @@ COMM_OBJS+= cores/raizCuadrada_M/write_result_raiz_M.v
 COMM_OBJS+= cores/raizCuadrada_M/control_raizCuadrada_M.v
 
 
+COMM_OBJS+= cores/binToBCD_M/perip_binToBCD_M.v
+COMM_OBJS+= cores/binToBCD_M/binToBCD_M.v
+COMM_OBJS+= cores/binToBCD_M/acc_binToBCD_M.v
+COMM_OBJS+= cores/binToBCD_M/main_process_binToBCD_M.v
+COMM_OBJS+= cores/binToBCD_M/control_binToBCD_M.v
+
+
+COMM_OBJS+= cores/BCDTobin_M/perip_BCDTobin_M.v
+COMM_OBJS+= cores/BCDTobin_M/BCDTobin_M.v
+COMM_OBJS+= cores/BCDTobin_M/acc_BCDTobin_M.v
+COMM_OBJS+= cores/BCDTobin_M/main_process_BCDTobin_M.v
+COMM_OBJS+= cores/BCDTobin_M/control_BCDTobin_M.v
+
 #-----------------------------------------------------
 
 COMM_OBJS+= cores/test/perip_test.v

@@ -1,17 +1,14 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module raizCuadrada_32_TB_M;
+module acc_paridad_TB_M;
 
- reg clk;
- reg rst;
- reg init;
- reg [31:0]A;
+   reg clk;
+   reg addi;
+   reg rst;
+   wire [5:0]i;
 
- wire done;
- wire [31:0]pp;
-
- raizCuadrada_32_M uut( .clk(clk), .rst(rst), .init(init), .done(done), .A(A), .pp(pp));
+   acc_paridad_M uut( .clk(clk) , .i(i) , .addi(addi) , .rst(rst));
 
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
@@ -28,32 +25,27 @@ module raizCuadrada_32_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0;init = 0; A = 32'd36 ;
+      rst = 0; addi = 0; 
+   end
+
+   reg [3:0] k;
+   initial begin // Reset the system, Start the image capture process
+        #20 rst = 1;
+        @ (posedge clk);
+        @ (negedge clk);
+        rst = 0;
+        @ (posedge clk);
+        @ (negedge clk);
+        addi = 1;
+       for(k=0; k<10; k=k+1) begin
+         @ (posedge clk);
+       end
    end
 
 
-   reg [2:0] i;
-   initial begin // Reset the system, Start the image capture process
-        @ (posedge clk);
-        rst = 1;
-        @ (posedge clk);
-        rst = 0;
-        @ (negedge clk);
-
-        init = 1;
-        @ (negedge clk);
-        init = 0;
-        @ (posedge clk);
-        @(posedge clk);
-        @ (posedge clk);
-        @ (negedge clk);
-        
-
-       end
-
    initial begin: TEST_CASE
-     $dumpfile("raizCuadrada_32_TB_M.vcd");
+     $dumpfile("acc_paridad_TB_M.vcd");
      $dumpvars(-1, uut);
-     #(10000) $finish;
+     #(1000) $finish;
    end
 endmodule

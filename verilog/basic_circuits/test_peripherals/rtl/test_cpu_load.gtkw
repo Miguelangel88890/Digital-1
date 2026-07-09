@@ -1,22 +1,23 @@
 [*]
 [*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
-[*] Mon Jul  6 15:11:08 2026
+[*] Thu Jul  9 02:23:56 2026
 [*]
 [dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/basic_circuits/test_peripherals/rtl/bench.vcd"
-[dumpfile_mtime] "Mon Jul  6 15:08:16 2026"
-[dumpfile_size] 285681633
+[dumpfile_mtime] "Thu Jul  9 02:19:39 2026"
+[dumpfile_size] 405604517
 [savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/basic_circuits/test_peripherals/rtl/test_cpu_load.gtkw"
-[timestart] 7720253000
+[timestart] 7699590400
 [size] 1854 1011
 [pos] -1 -1
-*-19.096033 7702020000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-17.096033 7699940000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] bench.
 [treeopen] bench.uut.
 [treeopen] bench.uut.bcd2bin0.bcd2bin0.
 [treeopen] bench.uut.bin2bcd0.bin2bcd0.
+[treeopen] bench.uut.binToBCD1.
+[treeopen] bench.uut.binToBCD1.binToBCD1.
 [treeopen] bench.uut.CPU.
 [treeopen] bench.uut.per_uart.
-[treeopen] bench.uut.raiz1.
 [sst_width] 462
 [signals_width] 346
 [sst_expanded] 1
@@ -381,14 +382,28 @@ bench.uut.bcd2bin0.init
 bench.uut.bcd2bin0.done
 @200
 -Div
-@201
 -
-@200
 -Raiz
-@24
-bench.uut.raiz1.raiz1.A[31:0]
-bench.uut.raiz1.result[31:0]
 @28
-bench.uut.raiz1.raiz1.w_done
+bench.uut.binToBCD1.done
+bench.uut.binToBCD1.A[7:0]
+bench.uut.binToBCD1.clk
+bench.uut.binToBCD1.result[15:0]
+bench.uut.binToBCD1.binToBCD1.pp[15:0]
+@821
+bench.uut.binToBCD1.binToBCD1.estados_binToBCD_M0.state_name[320:1]
+@22
+bench.uut.binToBCD1.binToBCD1.main_process_M0.s_A[31:0]
+@24
+bench.uut.binToBCD1.binToBCD1.main_process_M0.A1[3:0]
+@28
+bench.uut.binToBCD1.binToBCD1.main_process_M0.rst
+@22
+bench.uut.binToBCD1.binToBCD1.main_process_M0.A2[3:0]
+bench.uut.binToBCD1.binToBCD1.main_process_M0.A3[3:0]
+@28
+bench.uut.binToBCD1.binToBCD1.estados_binToBCD_M0.init
+bench.uut.binToBCD1.binToBCD1.pp[15:0]
+bench.uut.binToBCD1.binToBCD1.A[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

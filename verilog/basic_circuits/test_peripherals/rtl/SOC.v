@@ -99,7 +99,12 @@ module SOC (
 // --------Instanciacion del periferico a probar ----------------#
 // --------------------------------------------------------------#
 // --------------------------------------------------------------#
-   peripheral_raizCuadrada_M raiz1 (
+// peripheral_binToBCD_M binToBCD1
+// peripheral_BCDTobin_M BCTTobin1
+// peripheral_raizCuadrada_M raiz1
+// peripheral_divisor_M div1
+// peripheral_mult_M mult1
+   peripheral_BCDTobin_M BCTTobin1(
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),
