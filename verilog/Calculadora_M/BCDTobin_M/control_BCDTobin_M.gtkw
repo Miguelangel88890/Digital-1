@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Thu Jul  9 00:02:00 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/SOLO/control_BCDTobin_TB_M.vcd"
+[dumpfile_mtime] "Thu Jul  9 00:00:36 2026"
+[dumpfile_size] 6371
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/Calculadora_M/SOLO/control_BCDTobin_M.gtkw"
+[timestart] 0
+[size] 1854 1011
+[pos] -101 -101
+*-15.430768 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] control_BCDTobin_TB_M.
+[sst_width] 216
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 295
+@28
+control_BCDTobin_TB_M.uut.clk
+control_BCDTobin_TB_M.uut.msb1
+control_BCDTobin_TB_M.uut.msb2
+control_BCDTobin_TB_M.uut.msb3
+control_BCDTobin_TB_M.uut.c
+@820
+control_BCDTobin_TB_M.uut.state_name[320:1]
+@28
+control_BCDTobin_TB_M.uut.ld1
+control_BCDTobin_TB_M.uut.ld2
+@29
+control_BCDTobin_TB_M.uut.ld3
+[pattern_trace] 1
+[pattern_trace] 0
