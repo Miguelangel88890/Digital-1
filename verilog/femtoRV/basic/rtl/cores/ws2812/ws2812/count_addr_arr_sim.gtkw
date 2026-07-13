@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Mon Jul 13 01:08:56 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/ws2812/count_addr_arr_TB.vcd"
+[dumpfile_mtime] "Mon Jul 13 01:07:41 2026"
+[dumpfile_size] 73864
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/ws2812/count_addr_arr_sim.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-15.976107 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] count_addr_arr_TB.
+[sst_width] 216
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+count_addr_arr_TB.uut.clk
+count_addr_arr_TB.uut.rst
+@25
+count_addr_arr_TB.uut.address[5:0]
+@28
+count_addr_arr_TB.uut.inc
+[pattern_trace] 1
+[pattern_trace] 0

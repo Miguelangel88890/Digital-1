@@ -1,0 +1,90 @@
+[*]
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Fri Jun 26 19:54:01 2026
+[*]
+[dumpfile] "/Work/Embedded/digital_UN/Litex/colorlight_i5_no_bios_dma_TB.vcd"
+[dumpfile_mtime] "Fri Jun 26 19:32:07 2026"
+[dumpfile_size] 610195826
+[savefile] "/Work/Embedded/digital_UN/Litex/colorlight_i5_no_bios_dma_sim.gtkw"
+[timestart] 83670000
+[size] 1991 980
+[pos] -12 -380
+*-24.000000 115120000 0 0 0 0 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] colorlight_i5_no_bios_dma_TB.
+[treeopen] colorlight_i5_no_bios_dma_TB.uut.
+[treeopen] colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.
+[sst_width] 437
+[signals_width] 451
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@22
+colorlight_i5_no_bios_dma_TB.uut.VexRiscv.lastStagePc[31:0]
+@200
+- CSR bankarray disp0_dma decode
+@28
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_done
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_enable_storage
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_enable_wr_stb
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_loop_wr_stb
+@22
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_base0[63:0]
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_length_storage[31:0]
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_source_source_payload_data[31:0]
+@28
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_source_source_ready
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_source_source_valid
+@29
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_done
+@200
+- DMA Wishbone read bus
+@22
+colorlight_i5_no_bios_dma_TB.uut.ws2812_dma_bus_adr[31:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_dma_bus_dat_r[31:0]
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_sink_sink_payload_address[31:0]
+colorlight_i5_no_bios_dma_TB.uut.disp0_dma_offset1[31:0]
+@200
+- DMA stream to WS2812 loader
+@28
+colorlight_i5_no_bios_dma_TB.uut.csr_bankarray_csrbank1_loader_start_re
+colorlight_i5_no_bios_dma_TB.uut.csr_bankarray_csrbank1_loader_start_w
+colorlight_i5_no_bios_dma_TB.uut.csr_bankarray_csrbank1_loader_done_we
+colorlight_i5_no_bios_dma_TB.uut.csr_bankarray_csrbank1_loader_done_w
+@200
+- WS2812 periph
+@28
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.init_m
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.done_led
+@22
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.w_address[7:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.w_data[23:0]
+@28
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.we_a
+@22
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.rgb[23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.address[7:0]
+@200
+- WS2812 video RAM mem0 
+@22
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[0][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[1][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[2][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[3][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[4][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[5][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[6][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[7][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[8][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[9][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[10][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[11][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[12][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[13][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[14][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[15][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[16][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[17][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[18][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[19][23:0]
+colorlight_i5_no_bios_dma_TB.uut.ws2812_periph.mem0.\MEM[20][23:0]
+[pattern_trace] 1
+[pattern_trace] 0

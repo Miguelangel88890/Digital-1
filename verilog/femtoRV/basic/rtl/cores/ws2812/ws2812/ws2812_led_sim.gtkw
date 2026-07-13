@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Sun Jul 12 19:48:31 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/ws2812/ws2812_led_TB.vcd"
+[dumpfile_mtime] "Sun Jul 12 19:41:37 2026"
+[dumpfile_size] 223253
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/ws2812/ws2812_led_sim.gtkw"
+[timestart] 1809800
+[size] 1854 1011
+[pos] -51 -51
+*-16.416225 2110000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] ws2812_led_TB.
+[treeopen] ws2812_led_TB.uut.
+[sst_width] 278
+[signals_width] 155
+[sst_expanded] 1
+[sst_vpaned_height] 451
+@28
+ws2812_led_TB.uut.clk
+ws2812_led_TB.uut.reset
+@22
+ws2812_led_TB.uut.rgb[23:0]
+@28
+ws2812_led_TB.uut.lsr0.s_A[23:0]
+@25
+ws2812_led_TB.uut.count0.counter[4:0]
+@28
+ws2812_led_TB.uut.init
+ws2812_led_TB.uut.init_t
+ws2812_led_TB.uut.ws28120.sel[1:0]
+ws2812_led_TB.uut.dout
+@22
+ws2812_led_TB.uut.lsr0.s_A[23:0]
+@28
+ws2812_led_TB.uut.done
+ws2812_led_TB.uut.lsr0.load
+@24
+ws2812_led_TB.uut.ws28120.count0.cnt_out[10:0]
+[pattern_trace] 1
+[pattern_trace] 0
