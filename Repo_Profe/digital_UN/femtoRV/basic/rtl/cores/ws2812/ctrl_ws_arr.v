@@ -59,7 +59,7 @@ always @(* ) begin
     case (state)
         START: begin
             init_led <= 0;
-            rst      <= 0;
+            rst      <= 1;
             inc      <= 0;
             done     <= 0;
             
@@ -69,7 +69,6 @@ always @(* ) begin
             rst      <= 0;
             inc      <= 0;
             done     <= 0;
-            count    = 0;
         end
         SEND_LED: begin
             init_led <= 0;

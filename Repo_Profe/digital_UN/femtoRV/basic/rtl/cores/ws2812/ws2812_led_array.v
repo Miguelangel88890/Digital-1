@@ -7,21 +7,22 @@ module ws2812_led_array (
     output   done
 );
 
-parameter N_LEDS = 64;
+parameter N_LEDS = 9'd256;
 
 wire init_led;
 wire rst_addr;
 wire inc_addr;
 wire done_led;
 wire z;
-wire [5:0] address;
+wire [9:0] address;
 wire [23:0] rgb;
 
 led_mem     mem0    ( .clk(clk), .address(address), .data_r(rgb) );
 ws2812_led  ws2812_0( .clk(clk), .reset(reset), .rgb(rgb), .init(init_led), .rst_cmd(rst_cmd), .dout(dout), .done(done_led) );
-count_addr_arr  count0  ( .clk(clk), .rst(reset), .inc(inc), .address(address) );
+count_addr_arr  count0  ( .clk(clk), .rst(rst_addr), .inc(inc_addr), .address(address) );
 ctrl_ws_arr ctrl0   ( .clk(clk), .reset(reset), .init_m(init_m), .done_led(done_led), .z(z), .done(done), .init_led(init_led), .rst(rst_addr), .inc(inc_addr) );
 comp_ws_arr comp0   ( .address(address), .N_LEDS(N_LEDS), .z(z) );
-//24'hFF0000 verde
-
+//24'hFF0000 azul
+//24'hFFFFFF verde
+//24'h110022 Rojo
 endmodule

@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
-[*] Mon Jul 13 01:46:28 2026
+[*] Mon Jul 13 12:45:40 2026
 [*]
 [dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/bench.vcd"
-[dumpfile_mtime] "Mon Jul 13 01:38:32 2026"
-[dumpfile_size] 104363464
+[dumpfile_mtime] "Mon Jul 13 12:19:36 2026"
+[dumpfile_size] 117207231
 [savefile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/test_cpu_load.gtkw"
-[timestart] 9172548500
+[timestart] 7968768500
 [size] 1854 1011
 [pos] -1 -1
-*-16.621086 9172920000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-16.621086 7969020000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] bench.
 [treeopen] bench.uut.
 [treeopen] bench.uut.bcd2bin0.bcd2bin0.
@@ -20,7 +20,6 @@
 [treeopen] bench.uut.sqrt1.
 [treeopen] bench.uut.ws2812_0.
 [treeopen] bench.uut.ws2812_0.ws2812_LED0.
-[treeopen] bench.uut.ws2812_0.ws2812_LED0.ws2812_0.
 [sst_width] 462
 [signals_width] 346
 [sst_expanded] 1
@@ -461,16 +460,37 @@ bench.uut.ws2812_0.ws2812_LED0.clk
 bench.uut.ws2812_0.ws2812_LED0.rst_cmd
 @200
 -LEDS
+@29
+bench.uut.ws2812_0.ws2812_LED0.ctrl0.init_m
 @820
 bench.uut.ws2812_0.ws2812_LED0.ctrl0.state_name[320:1]
-@29
-bench.uut.ws2812_0.done
 @28
+bench.uut.ws2812_0.ws2812_LED0.count0.inc
+@24
+bench.uut.ws2812_0.ws2812_LED0.count0.address[5:0]
+@28
+bench.uut.ws2812_0.ws2812_LED0.ctrl0.inc
+bench.uut.ws2812_0.done
+bench.uut.ws2812_0.ws2812_LED0.ws2812_0.control0.done_t
 bench.uut.ws2812_0.ws2812_LED0.ctrl0.init_led
+@200
+-LED
+@28
+bench.uut.ws2812_0.ws2812_LED0.done_led
 @820
 bench.uut.ws2812_0.ws2812_LED0.ws2812_0.control0.state_name[320:1]
 @28
-bench.uut.ws2812_0.ws2812_LED0.ws2812_0.control0.done_t
-bench.uut.ws2812_0.ws2812_LED0.ctrl0.init_m
+bench.uut.ws2812_0.ws2812_LED0.ws2812_0.control0.init_t
+@22
+bench.uut.ws2812_0.ws2812_LED0.rgb[23:0]
+@28
+bench.uut.ws2812_0.ws2812_LED0.address[5:0]
+bench.uut.ws2812_0.ws2812_LED0.N_LEDS
+@200
+-SENDBIT
+@28
+bench.uut.ws2812_0.ws2812_LED0.ws2812_0.ws28120.done_t
+@820
+bench.uut.ws2812_0.ws2812_LED0.ws2812_0.ws28120.ctrl0.state_name[320:1]
 [pattern_trace] 1
 [pattern_trace] 0

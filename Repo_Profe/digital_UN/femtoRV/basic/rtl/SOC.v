@@ -123,7 +123,7 @@ module SOC (
    peripheral_ws2812 ws2812_0 (
       .clk(clk),
       .reset(!resetn),
-      .d_in(mem_wdata[19:0]),
+      .d_in(mem_wdata[15:0]),
       .cs(cs[7]),
       .addr(mem_addr[4:0]), // 4 LSB from j1_io_addr
       .rd(rd),
