@@ -5569,6 +5569,6 @@ Found and reported 0 problems.
 48. Executing JSON backend.
 
 Warnings: 64 unique messages, 64 total
-End of script. Logfile hash: 5121663e17, CPU: user 7.67s system 0.14s, MEM: 110.50 MB peak
+End of script. Logfile hash: 5121663e17, CPU: user 7.44s system 0.13s, MEM: 110.16 MB peak
 Yosys 0.33+6 (git sha1 41b34a193, x86_64-conda-linux-gnu-cc 11.2.0 -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/root/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1694128612374/work=/usr/local/src/conda/yosys-0.33_7_g41b34a193 -fdebug-prefix-map=/home/miguelangel-garcia/miniconda3/envs/digital=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
-Time spent: 21% 7x techmap (1 sec), 14% 1x abc (1 sec), ...
+Time spent: 21% 7x techmap (1 sec), 15% 31x opt_expr (1 sec), ...

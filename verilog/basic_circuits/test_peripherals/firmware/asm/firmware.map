@@ -8,78 +8,94 @@ BRAM             0x0000000000000000 0x0000000000004000 xrw
 Guión del enlazador y mapa de memoria
 
 
-everything      0x0000000000000000      0x4ce
+everything      0x0000000000000000      0x52a
                 0x0000000000000000                . = ALIGN (0x4)
  call_test.o()
- .text          0x0000000000000000       0x44 call_test.o
- .data          0x0000000000000044       0x23 call_test.o
- .bss           0x0000000000000067        0x0 call_test.o
+ .text          0x0000000000000000       0x1c call_test.o
+ .data          0x000000000000001c       0x23 call_test.o
+ .bss           0x000000000000003f        0x0 call_test.o
  .riscv.attributes
-                0x0000000000000067       0x1a call_test.o
+                0x000000000000003f       0x1a call_test.o
  get_number.o()
- *fill*         0x0000000000000081        0x3 
- .text          0x0000000000000084       0x80 get_number.o
-                0x0000000000000084                get_number
- .data          0x0000000000000104        0x0 get_number.o
- .bss           0x0000000000000104        0x0 get_number.o
+ *fill*         0x0000000000000059        0x3 
+ .text          0x000000000000005c       0x80 get_number.o
+                0x000000000000005c                get_number
+ .data          0x00000000000000dc        0x0 get_number.o
+ .bss           0x00000000000000dc        0x0 get_number.o
  .riscv.attributes
-                0x0000000000000104       0x1a get_number.o
+                0x00000000000000dc       0x1a get_number.o
  bin2bcd.o()
- *fill*         0x000000000000011e        0x2 
- .text          0x0000000000000120       0xa8 bin2bcd.o
-                0x0000000000000120                bin2bcd
- .data          0x00000000000001c8        0x0 bin2bcd.o
- .bss           0x00000000000001c8        0x0 bin2bcd.o
+ *fill*         0x00000000000000f6        0x2 
+ .text          0x00000000000000f8       0x54 bin2bcd.o
+                0x00000000000000f8                bin2bcd
+ .data          0x000000000000014c        0x0 bin2bcd.o
+ .bss           0x000000000000014c        0x0 bin2bcd.o
  .riscv.attributes
-                0x00000000000001c8       0x1a bin2bcd.o
+                0x000000000000014c       0x1a bin2bcd.o
  bcd2bin.o()
- *fill*         0x00000000000001e2        0x2 
- .text          0x00000000000001e4       0x4c bcd2bin.o
-                0x00000000000001e4                bcd2bin
- .data          0x0000000000000230        0x0 bcd2bin.o
- .bss           0x0000000000000230        0x0 bcd2bin.o
+ *fill*         0x0000000000000166        0x2 
+ .text          0x0000000000000168       0x4c bcd2bin.o
+                0x0000000000000168                bcd2bin
+ .data          0x00000000000001b4        0x0 bcd2bin.o
+ .bss           0x00000000000001b4        0x0 bcd2bin.o
  .riscv.attributes
-                0x0000000000000230       0x1a bcd2bin.o
+                0x00000000000001b4       0x1a bcd2bin.o
  bin_to_bcd.o()
- *fill*         0x000000000000024a        0x2 
- .text          0x000000000000024c      0x10c bin_to_bcd.o
-                0x000000000000024c                bin_to_bcd
- .data          0x0000000000000358        0x0 bin_to_bcd.o
- .bss           0x0000000000000358        0x0 bin_to_bcd.o
+ *fill*         0x00000000000001ce        0x2 
+ .text          0x00000000000001d0      0x10c bin_to_bcd.o
+                0x00000000000001d0                bin_to_bcd
+ .data          0x00000000000002dc        0x0 bin_to_bcd.o
+ .bss           0x00000000000002dc        0x0 bin_to_bcd.o
  .riscv.attributes
-                0x0000000000000358       0x1a bin_to_bcd.o
+                0x00000000000002dc       0x1a bin_to_bcd.o
  putchar.o()
- *fill*         0x0000000000000372        0x2 
- .text          0x0000000000000374       0x4c putchar.o
-                0x0000000000000374                putchar
- .data          0x00000000000003c0        0x0 putchar.o
- .bss           0x00000000000003c0        0x0 putchar.o
+ *fill*         0x00000000000002f6        0x2 
+ .text          0x00000000000002f8       0x4c putchar.o
+                0x00000000000002f8                putchar
+ .data          0x0000000000000344        0x0 putchar.o
+ .bss           0x0000000000000344        0x0 putchar.o
  .riscv.attributes
-                0x00000000000003c0       0x1a putchar.o
+                0x0000000000000344       0x1a putchar.o
  getchar.o()
- *fill*         0x00000000000003da        0x2 
- .text          0x00000000000003dc       0x3c getchar.o
-                0x00000000000003dc                getchar
- .data          0x0000000000000418        0x0 getchar.o
- .bss           0x0000000000000418        0x0 getchar.o
+ *fill*         0x000000000000035e        0x2 
+ .text          0x0000000000000360       0x3c getchar.o
+                0x0000000000000360                getchar
+ .data          0x000000000000039c        0x0 getchar.o
+ .bss           0x000000000000039c        0x0 getchar.o
  .riscv.attributes
-                0x0000000000000418       0x1a getchar.o
- putstring.o(.text)
- *fill*         0x0000000000000432        0x2 
- .text          0x0000000000000434       0x34 putstring.o
-                0x0000000000000434                putstring
+                0x000000000000039c       0x1a getchar.o
+ putstring.o()
+ *fill*         0x00000000000003b6        0x2 
+ .text          0x00000000000003b8       0x34 putstring.o
+                0x00000000000003b8                putstring
+ .data          0x00000000000003ec        0x0 putstring.o
+ .bss           0x00000000000003ec        0x0 putstring.o
+ .riscv.attributes
+                0x00000000000003ec       0x1a putstring.o
+ print_bit32.o()
+ *fill*         0x0000000000000406        0x2 
+ .text          0x0000000000000408       0x78 print_bit32.o
+                0x0000000000000408                print_bin32
+ .data          0x0000000000000480        0x0 print_bit32.o
+ .bss           0x0000000000000480        0x0 print_bit32.o
+ .riscv.attributes
+                0x0000000000000480       0x1a print_bit32.o
+ test_ws2812.o(.text)
+ *fill*         0x000000000000049a        0x2 
+ .text          0x000000000000049c       0x28 test_ws2812.o
+                0x000000000000049c                test_ws2812
  *(.*)
- .data          0x0000000000000468        0x0 putstring.o
- .bss           0x0000000000000468        0x0 putstring.o
+ .data          0x00000000000004c4        0x0 test_ws2812.o
+ .bss           0x00000000000004c4        0x0 test_ws2812.o
  .riscv.attributes
-                0x0000000000000468       0x1a putstring.o
- *fill*         0x0000000000000482        0x2 
- .text          0x0000000000000484       0x30 test.o
-                0x0000000000000484                test
- .data          0x00000000000004b4        0x0 test.o
- .bss           0x00000000000004b4        0x0 test.o
+                0x00000000000004c4       0x1a test_ws2812.o
+ *fill*         0x00000000000004de        0x2 
+ .text          0x00000000000004e0       0x30 test.o
+                0x00000000000004e0                test
+ .data          0x0000000000000510        0x0 test.o
+ .bss           0x0000000000000510        0x0 test.o
  .riscv.attributes
-                0x00000000000004b4       0x1a test.o
+                0x0000000000000510       0x1a test.o
 LOAD call_test.o
 LOAD get_number.o
 LOAD bin2bcd.o
@@ -88,5 +104,7 @@ LOAD bin_to_bcd.o
 LOAD putchar.o
 LOAD getchar.o
 LOAD putstring.o
+LOAD print_bit32.o
+LOAD test_ws2812.o
 LOAD test.o
 OUTPUT(firmware.elf elf32-littleriscv)

@@ -9,22 +9,26 @@ loopM:
    li   sp,0x2000
    li   sp,0x2000
 loop:
-	la   a0, number
-	call putstring
-	call get_number      # first number
-	call bcd2bin
-    add  t1, a0, zero    # store first operator in t1
+	# la   a0, number
+	#  call putstring
+	# call get_number      # first number
+	# call bcd2bin
+    # add  t1, a0, zero    # store first operator in t1
 
-	la   a0, number
-	call putstring
-	call get_number      # second number
-	call bcd2bin
-    add  t3, a0, zero    # Store second operator in t3
+	# la   a0, number
+	# call putstring
+	# call get_number      # second number
+	# call bcd2bin
+    # add  t3, a0, zero    # Store second operator in t3
 
-	add  a0, t1, zero
-	add  a1, t3, zero
+	# add  a0, t1, zero
+	# add  a1, t3, zero
 	call test
+	#call print_bin32
 	call bin2bcd
+	#call print_bin32
+	call test_ws2812
+	call print_bin32
 	
 	j    loop
 

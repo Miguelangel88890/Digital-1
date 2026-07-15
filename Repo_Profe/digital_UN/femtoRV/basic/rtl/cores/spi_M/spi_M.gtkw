@@ -1,9 +1,9 @@
 [*]
 [*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
-[*] Tue Jul 14 02:33:23 2026
+[*] Tue Jul 14 13:56:24 2026
 [*]
 [dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/spi_M/spi_TB_M.vcd"
-[dumpfile_mtime] "Tue Jul 14 02:30:55 2026"
+[dumpfile_mtime] "Tue Jul 14 13:55:47 2026"
 [dumpfile_size] 140275
 [savefile] "/home/miguelangel-garcia/Documentos/Digital_1/Repo_Profe/digital_UN/femtoRV/basic/rtl/cores/spi_M/spi_M.gtkw"
 [timestart] 2809400
@@ -29,9 +29,11 @@ spi_TB_M.uut.acc_spi_i_0.i[2:0]
 @28
 spi_TB_M.uut.acc_spi_i_0.rst_i
 spi_TB_M.uut.acc_spi_i_0.inc_i
-@29
 spi_TB_M.uut.shiftL_spi_0.s_A[15:0]
-@28
 spi_TB_M.uut.shiftL_spi_0.in_SO
+@25
+spi_TB_M.uut.acc_spi_j_0.j[4:0]
+@28
+spi_TB_M.uut.control_spi_0.c
 [pattern_trace] 1
 [pattern_trace] 0

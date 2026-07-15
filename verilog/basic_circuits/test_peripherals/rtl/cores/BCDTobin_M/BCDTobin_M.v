@@ -4,7 +4,7 @@ module BCDTobin_M(clk, rst, init, done, A, B , pp);
     input init;
     input [3:0]A;
     input [3:0]B;
-    output [7:0]pp;
+    output [15:0]pp;
     output done;
 
     wire w_sh;
@@ -33,7 +33,7 @@ module BCDTobin_M(clk, rst, init, done, A, B , pp);
     assign temp_RES2 = w_A[15:12] + (~4'b0101 + 1);
     assign temp_RES3 = w_A[19:16] + (~4'b0101 + 1);
 
-    assign pp = w_A[7:0];
+    assign pp = {8'b0 , A[7:0]};
     
 
 

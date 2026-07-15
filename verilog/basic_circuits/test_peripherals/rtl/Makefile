@@ -107,6 +107,42 @@ COMM_OBJS+= cores/test/mult/lsr_mult.v
 COMM_OBJS+= cores/test/mult/control_mult.v
 COMM_OBJS+= cores/test/mult/rsr.v
 
+COMM_OBJS+= cores/ws2812/perip_ws2812.v
+
+
+COMM_OBJS+= cores/ws2812/ws2812_led_array.v
+
+COMM_OBJS+= cores/ws2812/led_mem.v
+COMM_OBJS+= cores/ws2812/count_addr_arr.v
+COMM_OBJS+= cores/ws2812/ctrl_ws_arr.v
+COMM_OBJS+= cores/ws2812/comp_ws_arr.v
+
+
+
+COMM_OBJS+= cores/ws2812/ws2812_led.v
+
+COMM_OBJS+= cores/ws2812/lsr_wsled.v
+COMM_OBJS+= cores/ws2812/count_wsled.v
+COMM_OBJS+= cores/ws2812/ctrl_wsled.v
+
+
+COMM_OBJS+= cores/ws2812/ws2812.v
+
+COMM_OBJS+= cores/ws2812/count_ws.v
+COMM_OBJS+= cores/ws2812/comp_ws.v
+COMM_OBJS+= cores/ws2812/mux_ws.v
+COMM_OBJS+= cores/ws2812/ctrl_ws.v
+
+
+COMM_OBJS+= cores/spi_M/perip_spi_M.v
+
+COMM_OBJS+= cores/spi_M/spi_M.v
+COMM_OBJS+= cores/spi_M/control_spi_M.v
+COMM_OBJS+= cores/spi_M/shiftL_spi_M.v
+COMM_OBJS+= cores/spi_M/acc_spi_i_M.v
+COMM_OBJS+= cores/spi_M/acc_spi_j_M.v
+COMM_OBJS+= cores/spi_M/acc_spi_k_M.v
+
 COMM_OBJS +=  SOC.v
 
 OBJS += $(COMM_OBJS)

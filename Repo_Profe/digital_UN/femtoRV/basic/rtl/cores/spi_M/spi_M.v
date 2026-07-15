@@ -1,6 +1,6 @@
 module spi_M (
-    input  clk,
     input  rst,
+    input  clk,
     input  init_spi,
     input  SO,
     output cs_spi,

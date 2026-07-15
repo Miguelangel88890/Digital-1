@@ -4,7 +4,11 @@ module SOC (
     input        resetn, // reset button
     output wire  LEDS,   // system LEDs
     input        RXD,    // UART receive
-    output       TXD     // UART transmit
+    output       TXD,     // UART transmit
+    output wire ws2812_salida,
+    input wire in_SO, // Entrada del sensor MAX6675
+    output wire spi_clk_salida,
+    output wire spi_cs_salida
 );
 
    wire [31:0] mem_addr;
@@ -104,15 +108,52 @@ module SOC (
 // peripheral_raizCuadrada_M raiz1
 // peripheral_divisor_M div1
 // peripheral_mult_M mult1
-   peripheral_BCDTobin_M BCTTobin1(
+   // peripheral_raizCuadrada_M raiz1(
+   //    .clk(clk),
+   //    .reset(!resetn),
+   //    .d_in(mem_wdata[15:0]),
+   //    .cs(cs[3]),
+   //    .addr(mem_addr[4:0]),
+   //    .rd(rd),
+   //    .wr(wr),
+   //    .d_out(test_dout)
+   // );
+
+   peripheral_ws2812 ws2812_0 (
+      .clk(clk),
+      .reset(!resetn),
+      .d_in(mem_wdata[15:0]),
+      .cs(cs[2]),
+      .addr(mem_addr[4:0]), // 4 LSB from j1_io_addr
+      .rd(rd),
+      .wr(wr),
+      .d_out(div_dout),
+      .ws2812_salida(ws2812_salida)
+   );
+
+   // peripheral_mult mult1 (
+   //    .clk(clk),
+   //    .reset(!resetn),
+   //    .d_in(mem_wdata[15:0]),
+   //    .cs(cs[3]),
+   //    .addr(mem_addr[4:0]),
+   //    .rd(rd),
+   //    .wr(wr),
+   //    .d_out(mult_dout)
+   // );
+
+   peripheral_spi_M spi_M_0 (
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),
       .cs(cs[3]),
-      .addr(mem_addr[4:0]),
+      .addr(mem_addr[4:0]), // 4 LSB from j1_io_addr
       .rd(rd),
       .wr(wr),
-      .d_out(test_dout)
+      .d_out(test_dout),
+      .perip_clk_spi(spi_clk_salida),
+      .perip_cs_spi(spi_cs_salida),
+      .perip_SO(in_SO)
    );
 
   always @*

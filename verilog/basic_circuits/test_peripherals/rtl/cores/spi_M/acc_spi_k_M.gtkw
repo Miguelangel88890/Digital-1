@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Jul 14 21:33:13 2026
+[*]
+[dumpfile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/basic_circuits/test_peripherals/rtl/cores/spi_M/acc_spi_k_TB_M.vcd"
+[dumpfile_mtime] "Tue Jul 14 21:32:24 2026"
+[dumpfile_size] 1910
+[savefile] "/home/miguelangel-garcia/Documentos/Digital_1/verilog/basic_circuits/test_peripherals/rtl/cores/spi_M/acc_spi_k_M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -21 63
+*-17.222279 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] acc_spi_k_TB_M.
+[sst_width] 216
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+acc_spi_k_TB_M.uut.clk
+acc_spi_k_TB_M.uut.rst
+acc_spi_k_TB_M.uut.inc_k
+@25
+acc_spi_k_TB_M.uut.k[7:0]
+@28
+acc_spi_k_TB_M.uut.w
+[pattern_trace] 1
+[pattern_trace] 0
