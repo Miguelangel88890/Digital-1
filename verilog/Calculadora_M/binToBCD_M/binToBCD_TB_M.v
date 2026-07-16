@@ -28,7 +28,7 @@ module binToBCD_TB_M;
    end
 
    initial begin // Reset the system, Start the image capture process
-      rst = 0; init = 0; A = 8'b00101010;
+      rst = 0; init = 0; A = 8'b00011010;
    end
 
 

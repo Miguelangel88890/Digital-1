@@ -18,7 +18,7 @@
 
 
 TARGET  = test
-OBJS    = call_$(TARGET).o get_number.o bin2bcd.o bcd2bin.o bin_to_bcd.o putchar.o getchar.o putstring.o print_bit32.o test_ws2812.o
+OBJS    = call_$(TARGET).o get_number.o bin2bcd.o bcd2bin.o bin_to_bcd.o putchar.o getchar.o putstring.o print_bit32.o test_ws2812.o test_binToBCD.o
 OBJECTS = $(OBJS) $(TARGET).o
 
 CROSS   = riscv32-unknown-elf

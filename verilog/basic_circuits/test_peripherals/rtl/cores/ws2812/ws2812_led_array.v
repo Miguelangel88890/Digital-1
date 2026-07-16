@@ -18,11 +18,13 @@ wire done_led;
 wire z;
 wire [9:0] address;
 wire [23:0] rgb;
-always @(*) begin
-    pp = {16'b0, A[15:0]};
-end
+// always @(*) begin
+//     pp = {16'b0, A[15:0]};
+// end
+wire [9:0] address_RES;
+assign address_RES = address[9:0] - 128;
 
-led_mem     mem0    ( .clk(clk), .address(address), .data_r(rgb) , .A(A) );
+led_mem     mem0    ( .clk(clk), .address(address), .data_r(rgb) , .A(A) , .ld_left(address_RES[9]) );
 ws2812_led  ws2812_0( .clk(clk), .reset(reset), .rgb(rgb), .init(init_led), .rst_cmd(1'b0), .dout(dout), .done(done_led) );
 count_addr_arr  count0  ( .clk(clk), .rst(rst_addr), .inc(inc_addr), .address(address) );
 ctrl_ws_arr ctrl0   ( .clk(clk), .reset(reset), .init_m(init_m), .done_led(done_led), .z(z), .done(done), .init_led(init_led), .rst(rst_addr), .inc(inc_addr) );

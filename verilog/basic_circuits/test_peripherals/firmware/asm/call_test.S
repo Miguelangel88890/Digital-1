@@ -25,10 +25,10 @@ loop:
 	# add  a1, t3, zero
 	call test
 	#call print_bin32
-	call bin2bcd
+	call test_binToBCD
 	#call print_bin32
 	call test_ws2812
-	call print_bin32
+	#call print_bin32
 	
 	j    loop
 

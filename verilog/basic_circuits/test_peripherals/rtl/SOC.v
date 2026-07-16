@@ -156,6 +156,17 @@ module SOC (
       .perip_SO(in_SO)
    );
 
+   peripheral_binToBCD_M binToBCD0(
+      .clk(clk) ,
+      .reset (!resetn),
+      .d_in (mem_wdata[15:0]),
+      .cs (cs[4]),
+      .addr (mem_addr[4:0]),
+      .rd (rd),
+      .wr (wr),
+      .d_out (sqrt_dout) 
+   );
+
   always @*
   begin
       case (mem_addr[31:16])	// direcciones - chip_select
