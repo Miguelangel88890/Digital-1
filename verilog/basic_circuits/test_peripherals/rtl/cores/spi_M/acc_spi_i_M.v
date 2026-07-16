@@ -4,7 +4,7 @@ module acc_spi_i_M (clk , rst , i, rst_i, inc_i , z);
   input rst_i;
   input inc_i;
   output reg z;
-  output reg [5:0] i;
+  output reg [2:0] i;
 
 always @(negedge clk) begin
   if (rst) begin
@@ -16,7 +16,7 @@ always @(negedge clk) begin
         z <= 0;
       if (inc_i)
         i <= i + 1;  
-      if (i == 49)
+      if (i == 4)
           z <= 1;
   end
 end

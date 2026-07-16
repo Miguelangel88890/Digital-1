@@ -3,7 +3,7 @@ module acc_spi_k_M (clk , rst , k , inc_k , w);
   input rst;
   input inc_k;
   output reg w;
-  output reg [7:0] k;
+  output reg [2:0] k;
 
 always @(negedge clk) begin
   if (rst) begin
@@ -12,7 +12,7 @@ always @(negedge clk) begin
   end else begin
       if (inc_k)
         k <= k + 1;  
-      if (k == 125)
+      if (k == 4)
           w <= 1;
   end
 end

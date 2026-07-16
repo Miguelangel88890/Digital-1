@@ -10,14 +10,14 @@ module spi_M (
 );
 
 wire w_reset;
-wire [5:0]w_i;
+wire [2:0]w_i;
 wire w_rst_i;
 wire w_inc_i;
 wire w_z;
 wire [4:0]w_j;
 wire w_sh;
 wire w_c;
-wire [7:0]w_k;
+wire [2:0]w_k;
 wire w_w;
 wire w_inc_k;
 wire [15:0]w_A;
